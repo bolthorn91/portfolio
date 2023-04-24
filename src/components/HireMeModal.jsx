@@ -111,7 +111,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 											focus:ring-1 focus:ring-indigo-900 duration-500"
 										aria-label="Submit Request"
 									>
-										<Button title="Send Request" />
+										<Button type="submit" title="Send Request" />
 									</span>
 								</div>
 							</form>
