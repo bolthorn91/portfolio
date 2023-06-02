@@ -3,17 +3,30 @@ import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 const contacts = [
 	{
 		id: 1,
-		name: 'Your Address, Your City, Your Country',
+		htmlLink: (
+			<a 
+				className="text-lg mb-4 text-ternary-dark dark:text-ternary-light" 
+				href='https://goo.gl/maps/L46AneiqZJiA3vR47'
+				target='_blank'
+				rel='noreferrer'
+			>
+					Las Palmas de Gran Canaria, Spain
+			</a>
+		) ,
 		icon: <FiMapPin />,
 	},
 	{
 		id: 2,
-		name: 'email@domain.com',
+		htmlLink: (
+			<a className="text-lg mb-4 text-ternary-dark dark:text-ternary-light" href='mailto:bolthorn91@gmail.com'>bolthorn91@gmail.com</a>
+		),
 		icon: <FiMail />,
 	},
 	{
 		id: 3,
-		name: '555 8888 888',
+		htmlLink: (
+			<a className="text-lg mb-4 text-ternary-dark dark:text-ternary-light" href='tel:+34690213153'>+34 690 21 31 53</a>
+		),
 		icon: <FiPhone />,
 	},
 ];
@@ -31,9 +44,7 @@ const ContactDetails = () => {
 							<i className="text-2xl text-gray-500 dark:text-gray-400 mr-4">
 								{contact.icon}
 							</i>
-							<span className="text-lg mb-4 text-ternary-dark dark:text-ternary-light">
-								{contact.name}
-							</span>
+							{contact.htmlLink}
 						</li>
 					))}
 				</ul>

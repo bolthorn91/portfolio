@@ -1,4 +1,4 @@
-import profileImage from '../../images/profile.jpeg';
+import profileImage from '../../images/profile.png';
 import { useContext } from 'react';
 import AboutMeContext from '../../context/AboutMeContext';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ const AboutMeBio = () => {
 		},
 		visible: (i = 1) => ({
 		  opacity: 1,
-		  transition: { staggerChildren: 0.05, delayChildren: i * 0 }
+		  transition: { staggerChildren: 0.01, delayChildren: i * 0 }
 		})
 	  };
 	  
