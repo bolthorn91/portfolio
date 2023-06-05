@@ -4,6 +4,16 @@ import SingleProjectContext from '../../context/SingleProjectContext';
 const ProjectInfo = () => {
 	const { singleProjectData } = useContext(SingleProjectContext);
 
+	const getLink = (title, details) => {
+		if (title === 'Website') {
+			return details
+		}
+		if (title === 'Phone') {
+			return `tel:${details}`
+		}
+		return 'https://bolthorn.io';
+	}
+
 	return (
 		<div className="block sm:flex gap-0 sm:gap-10 mt-14">
 			<div className="w-full sm:w-1/3 text-left">
@@ -21,18 +31,20 @@ const ProjectInfo = () => {
 										key={info.id}
 									>
 										<span>{info.title}: </span>
-										<a
-											href="https://stoman.me"
-											className={
-												info.title === 'Website' ||
-												info.title === 'Phone'
-													? 'hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
-													: ''
-											}
-											aria-label="Project Website and Phone"
-										>
-											{info.details}
-										</a>
+										{(info.title === 'Website' || info.title === 'Phone') 
+										 	? (
+												<a
+													target='_blank'
+													rel='noreferrer'
+													href={getLink(info.title, info.details)}
+													className='hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
+													aria-label="Project Website and Phone"
+												>
+													{info.details}
+												</a>
+											)
+											: <span>{info.details}</span> 
+										}
 									</li>
 								);
 							}

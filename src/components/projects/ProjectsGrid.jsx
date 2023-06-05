@@ -15,6 +15,18 @@ const ProjectsGrid = () => {
 		selectProjectsByCategory,
 	} = useContext(ProjectsContext);
 
+	const renderProjects = (_projects) => (
+		_projects.map(_project => (
+			<ProjectSingle
+				title={_project.title}
+				category={_project.category}
+				image={_project.img}
+				key={_project.id}
+				id={_project.id}
+			/>
+		))
+	)
+
 	return (
 		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
 			<div className="text-center">
@@ -94,32 +106,15 @@ const ProjectsGrid = () => {
 			</div>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-				{selectProject
-					? selectProjectsByCategory.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))
-					: searchProject
-					? searchProjectsByTitle.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))
-					: projects.map((project) => (
-							<ProjectSingle
-								title={project.title}
-								category={project.category}
-								image={project.img}
-								key={project.id}
-							/>
-					  ))}
+				{selectProject && (
+					renderProjects(selectProjectsByCategory)
+				)}
+				{!selectProject && searchProject && (
+					renderProjects(searchProjectsByTitle)
+				)}
+				{!selectProject && !searchProject && (
+					renderProjects(projects)
+				)}
 			</div>
 		</section>
 	);

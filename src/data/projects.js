@@ -5,6 +5,7 @@ import MobileImage1 from '../images/mobile-project-1.jpg';
 import MobileImage2 from '../images/mobile-project-2.jpg';
 import UIImage1 from '../images/ui-project-1.jpg';
 import UIImage2 from '../images/ui-project-2.jpg';
+import courthero1 from '../images/projects/courthero/courthero1.png';
 
 export const projectsData = [
 	{
@@ -15,7 +16,7 @@ export const projectsData = [
 		ProjectHeader: {
 			title: 'Project Management UI - From Context',
 			publishDate: 'Jul 26, 2021',
-			tags: 'UI / Frontend',
+			tags: ['UI / Frontend'],
 		},
 	},
 	{
@@ -47,5 +48,11 @@ export const projectsData = [
 		title: 'Apple Design System',
 		category: 'Web Application',
 		img: WebImage1,
+	},
+	{
+		id: 7,
+		title: 'Court Hero',
+		category: 'Web Application',
+		img: courthero1,
 	},
 ];
