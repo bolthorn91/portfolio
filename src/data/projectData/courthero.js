@@ -11,6 +11,7 @@ import courtheroImage9 from '../../images/projects/courthero/courthero9.png';
 import courtheroImage10 from '../../images/projects/courthero/courthero10.png';
 import courtheroImage11 from '../../images/projects/courthero/courthero11.png';
 import courtheroImage12 from '../../images/projects/courthero/courthero12.png';
+import courtheroImage13 from '../../images/projects/courthero/courthero13.png';
 import Image3 from '../../images/mobile-project-2.jpg';
 import Image4 from '../../images/mobile-project-1.jpg';
 import Image5 from '../../images/web-project-1.jpg';
@@ -33,73 +34,68 @@ export const courtheroProjectData = {
 	ProjectImages: [
 		{
 			id: 1,
-			title: 'Login',
+			title: 'Venues List',
 			img: courtheroImage1,
 		},
 		{
 			id: 2,
-			title: 'Login',
+			title: 'Create Court',
 			img: courtheroImage2,
 		},
 		{
 			id: 3,
-			title: 'Login',
+			title: 'Add Season',
 			img: courtheroImage3,
 		},
 		{
 			id: 4,
-			title: 'Login',
+			title: 'Players List',
 			img: courtheroImage4,
 		},
 		{
 			id: 5,
-			title: 'Login',
-			img: courtheroImage5,
-		},
-		{
-			id: 5,
-			title: 'Login',
-			img: courtheroImage5,
-		},
-		{
-			id: 5,
-			title: 'Login',
+			title: 'Add Price Rules',
 			img: courtheroImage5,
 		},
 		{
 			id: 6,
-			title: 'Login',
+			title: 'Price Rules List',
 			img: courtheroImage6,
 		},
 		{
 			id: 7,
-			title: 'Login',
+			title: 'Booking Calendar Day view',
 			img: courtheroImage7,
 		},
 		{
 			id: 8,
-			title: 'Login',
+			title: 'Booking Calendar Week view',
 			img: courtheroImage8,
 		},
 		{
 			id: 9,
-			title: 'Login',
+			title: 'Booking1',
 			img: courtheroImage9,
 		},
 		{
 			id: 10,
-			title: 'Login',
+			title: 'Booking2',
 			img: courtheroImage10,
 		},
 		{
 			id: 11,
-			title: 'Login',
+			title: 'Reservation1',
 			img: courtheroImage11,
 		},
 		{
 			id: 12,
-			title: 'Login',
+			title: 'Settlement List',
 			img: courtheroImage12,
+		},
+		{
+			id: 13,
+			title: 'Reservation2',
+			img: courtheroImage13,
 		},
 	],
 	ProjectInfo: {
@@ -173,31 +169,25 @@ export const courtheroProjectData = {
 				id: 1,
 				name: 'Twitter',
 				icon: <FiTwitter />,
-				url: 'https://twitter.com/realstoman',
+				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/7',
 			},
 			{
 				id: 2,
 				name: 'Instagram',
 				icon: <FiInstagram />,
-				url: 'https://instagram.com/realstoman',
+				url: 'https://instagram.com/bolthornmakers',
 			},
 			{
 				id: 3,
 				name: 'Facebook',
 				icon: <FiFacebook />,
-				url: 'https://facebook.com/',
+				url: 'https://bolthornmakers.io/projects/7',
 			},
 			{
 				id: 4,
 				name: 'LinkedIn',
 				icon: <FiLinkedin />,
-				url: 'https://linkedin.com/',
-			},
-			{
-				id: 5,
-				name: 'Youtube',
-				icon: <FiYoutube />,
-				url: 'https://www.youtube.com/c/StomanStudio',
+				url: 'https://bolthornmakers.io/projects/7',
 			},
 		],
 	},

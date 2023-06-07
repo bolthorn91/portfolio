@@ -4,7 +4,7 @@ import SingleProjectContext from '../../context/SingleProjectContext';
 const ProjectInfo = () => {
 	const { singleProjectData } = useContext(SingleProjectContext);
 
-	const getLink = (title, details) => {
+	const getCompanyLink = (title, details) => {
 		if (title === 'Website') {
 			return details
 		}
@@ -12,6 +12,16 @@ const ProjectInfo = () => {
 			return `tel:${details}`
 		}
 		return 'https://bolthorn.io';
+	}
+
+	const getSocialNetworkLink = (social) => {
+		if (social.name === 'Facebook') {
+			return 'https://www.facebook.com/sharer/sharer.php?u=' + social.url;
+		}
+		if (social.name === 'LinkedIn') {
+			return 'https://www.linkedin.com/cws/share?url=' + social.url;
+		}
+		return social.url
 	}
 
 	return (
@@ -36,7 +46,7 @@ const ProjectInfo = () => {
 												<a
 													target='_blank'
 													rel='noreferrer'
-													href={getLink(info.title, info.details)}
+													href={getCompanyLink(info.title, info.details)}
 													className='hover:underline hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300'
 													aria-label="Project Website and Phone"
 												>
@@ -85,7 +95,7 @@ const ProjectInfo = () => {
 								return (
 									<a
 										key={social.id}
-										href={social.url}
+										href={getSocialNetworkLink(social)}
 										target="__blank"
 										aria-label="Share Project"
 										className="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500"
