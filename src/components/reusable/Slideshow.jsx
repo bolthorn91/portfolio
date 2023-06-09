@@ -97,8 +97,8 @@ const Slideshow = ({ images }) => {
                 </motion.div>
             </motion.div>
             <div className="navigation-icons flex mt-4 justify-center" style={{gap: '10%'}}>
-                <FiChevronLeft size={40} className="prev-icon cursor-pointer" onClick={prevImage} />
-                <FiChevronRight size={40} className="next-icon cursor-pointer" onClick={nextImage} />
+                <FiChevronLeft size={40} className="prev-icon cursor-pointer bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500" onClick={prevImage} />
+                <FiChevronRight size={40} className="next-icon cursor-pointer bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500" onClick={nextImage} />
             </div>
         </div>
     );
