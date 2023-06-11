@@ -6,16 +6,16 @@ import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { useEffect, useContext } from 'react';
 import SingleProjectContext from '../context/SingleProjectContext';
-import { courtheroProjectData } from '../data/projectData/courthero';
 
 const ProjectSingle = () => {
 	const { id } = useParams();
-	const { setSingleProjectData, singleProjectData} = useContext(SingleProjectContext);
+	const { projectList, setSingleProjectData, singleProjectData} = useContext(SingleProjectContext);
 	
 	useEffect(() => {
 		if (id) {
-			if (id === '7') {
-				setSingleProjectData(courtheroProjectData)
+			const selectedProject = projectList.find(_project => _project.id === parseInt(id))
+			if (selectedProject) {
+				setSingleProjectData(selectedProject)
 			}
 		}
 	}, [setSingleProjectData, id])

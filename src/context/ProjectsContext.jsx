@@ -1,12 +1,33 @@
 import { useState, createContext } from 'react';
+import { buscorepuestosProjectData } from '../data/projectData/buscorepuestos';
+import { courtheroProjectData } from '../data/projectData/courthero';
 import { projectsData } from '../data/projects';
+
 
 // Create projects context
 export const ProjectsContext = createContext();
 
 // Create the projects context provider
 export const ProjectsProvider = (props) => {
-	const [projects, setProjects] = useState(projectsData);
+
+	const getProjectPreviews = (_projectList) => {
+		const projectListPreviews = _projectList.map(_project => ({
+			id: _project.id,
+			title: _project.ProjectHeader.title,
+			category: _project.category,
+			img: _project.ProjectImages[0].img,
+			ProjectHeader: {
+				title: _project.ProjectHeader.title,
+				publishDate: _project.ProjectHeader.publishDate,
+				tags: _project.ProjectHeader.tags,
+			}
+		}))
+		const projectPreviews = [...projectListPreviews, ...projectsData]
+		return projectPreviews;
+	}
+
+	const projectList = [courtheroProjectData, buscorepuestosProjectData]
+	const [projects, setProjects] = useState(getProjectPreviews(projectList));
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
 
@@ -32,6 +53,7 @@ export const ProjectsProvider = (props) => {
 	return (
 		<ProjectsContext.Provider
 			value={{
+				projectList,
 				projects,
 				setProjects,
 				searchProject,

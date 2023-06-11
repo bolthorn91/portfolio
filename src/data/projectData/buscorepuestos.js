@@ -24,12 +24,12 @@ import {
 	FiTwitter,
 } from 'react-icons/fi';
 
-export const courtheroProjectData = {
-	id: 1,
-	category: 'Web Application',
+export const buscorepuestosProjectData = {
+    id: 2,
+    category: 'Web Application',
 	ProjectHeader: {
-		title: 'Court Hero',
-		publishDate: 'June, 2022',
+		title: 'Buscorepuestos',
+		publishDate: 'June, 2020',
 		tags: ['Fullstack', 'Frontend', 'Backend'],
 	},
 	ProjectImages: [
@@ -105,7 +105,7 @@ export const courtheroProjectData = {
 			{
 				id: 1,
 				title: 'Name',
-				details: 'Tennis Point',
+				details: 'Buscorepuestos',
 			},
 			{
 				id: 2,
@@ -115,12 +115,12 @@ export const courtheroProjectData = {
 			{
 				id: 3,
 				title: 'Website',
-				details: 'https://www.tennis-point.de',
+				details: 'https://www.buscorepuestos.com',
 			},
 		],
 		ObjectivesHeading: 'Objective',
 		ObjectivesDetails:
-			'Create an application to manage tennis clubs around the world allowing you to manage the facilities, club members, schedules and prices and being able to manage invoices and payments in the most comfortable and simple way for the user',
+			'A platform that specializes in connecting users with suppliers of spare parts for various vehicles, including cars, motorcycles, trucks, and buses.',
 		Technologies: [
 			{
 				title: 'Tools & Technologies',
@@ -128,11 +128,14 @@ export const courtheroProjectData = {
 					'HTML',
 					'CSS',
 					'Typescript',
-					'Next.js',
-                    'React',
-                    'Redux',
+					'Angular',
 					'TailwindCSS',
-                    'Storybook',
+                    'Pupeteer',
+                    'Nestjs',
+                    'Stripe',
+                    'Mongodb',
+                    'Airtable',
+                    'Zapier'
 				],
 			},
 		],
@@ -170,7 +173,7 @@ export const courtheroProjectData = {
 				id: 1,
 				name: 'Twitter',
 				icon: <FiTwitter />,
-				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/7',
+				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/8',
 			},
 			{
 				id: 2,
@@ -182,13 +185,13 @@ export const courtheroProjectData = {
 				id: 3,
 				name: 'Facebook',
 				icon: <FiFacebook />,
-				url: 'https://bolthornmakers.io/projects/7',
+				url: 'https://bolthornmakers.io/projects/8',
 			},
 			{
 				id: 4,
 				name: 'LinkedIn',
 				icon: <FiLinkedin />,
-				url: 'https://bolthornmakers.io/projects/7',
+				url: 'https://bolthornmakers.io/projects/8',
 			},
 		],
 	},
