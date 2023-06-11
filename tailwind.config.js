@@ -26,7 +26,10 @@ module.exports = {
 		},
 	},
 	variants: {
-		extend: { opacity: ['disabled'] },
+		extend: { 
+			opacity: ['disabled'],
+			transform: ['hover'],
+		},
 	},
 	plugins: ['@tailwindcss/forms'],
 };
