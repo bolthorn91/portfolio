@@ -8,7 +8,7 @@ import UIImage2 from '../images/ui-project-2.jpg';
 
 export const projectsData = [
 	{
-		id: 3,
+		id: 4,
 		title: 'Google Health Platform',
 		category: 'Web Application',
 		img: WebImage2,
@@ -19,31 +19,31 @@ export const projectsData = [
 		},
 	},
 	{
-		id: 4,
+		id: 5,
 		title: 'Phoenix Digital Agency',
 		category: 'Mobile Application',
 		img: MobileImage2,
 	},
 	{
-		id: 5,
+		id: 6,
 		title: 'Project Management UI',
 		category: 'UI/UX Design',
 		img: UIImage1,
 	},
 	{
-		id: 6,
+		id: 7,
 		title: 'Cloud Storage Platform',
 		category: 'UI/UX Design',
 		img: UIImage2,
 	},
 	{
-		id: 7,
+		id: 8,
 		title: 'React Social App',
 		category: 'Mobile Application',
 		img: MobileImage1,
 	},
 	{
-		id: 8,
+		id: 9,
 		title: 'Apple Design System',
 		category: 'Web Application',
 		img: WebImage1,

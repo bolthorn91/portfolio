@@ -81,7 +81,7 @@ const Slideshow = ({ images }) => {
             >
                 <motion.img 
                     id="slideshow-image"
-                    className='rounded-xl cursor-pointer shadow-lg sm:shadow-none'
+                    className='rounded-xl cursor-pointer shadow-lg sm:shadow-none mx-auto'
                     src={images[currentImage].img}
                     alt={images[currentImage].title}
                     variants={imageAnimation}

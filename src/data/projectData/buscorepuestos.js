@@ -1,21 +1,9 @@
 // Import images
-import courtheroImage1 from '../../images/projects/courthero/courthero1.png';
-import courtheroImage2 from '../../images/projects/courthero/courthero2.png';
-import courtheroImage3 from '../../images/projects/courthero/courthero3.png';
-import courtheroImage4 from '../../images/projects/courthero/courthero4.png';
-import courtheroImage5 from '../../images/projects/courthero/courthero5.png';
-import courtheroImage6 from '../../images/projects/courthero/courthero6.png';
-import courtheroImage7 from '../../images/projects/courthero/courthero7.png';
-import courtheroImage8 from '../../images/projects/courthero/courthero8.png';
-import courtheroImage9 from '../../images/projects/courthero/courthero9.png';
-import courtheroImage10 from '../../images/projects/courthero/courthero10.png';
-import courtheroImage11 from '../../images/projects/courthero/courthero11.png';
-import courtheroImage12 from '../../images/projects/courthero/courthero12.png';
-import courtheroImage13 from '../../images/projects/courthero/courthero13.png';
-import Image3 from '../../images/mobile-project-2.jpg';
-import Image4 from '../../images/mobile-project-1.jpg';
-import Image5 from '../../images/web-project-1.jpg';
-import Image6 from '../../images/ui-project-2.jpg';
+import buscorepuestosImage1 from '../../images/projects/buscorepuestos/buscorepuestos1.png';
+import buscorepuestosImage2 from '../../images/projects/buscorepuestos/buscorepuestos2.png';
+import buscorepuestosImage3 from '../../images/projects/buscorepuestos/buscorepuestos3.png';
+import buscorepuestosImage4 from '../../images/projects/buscorepuestos/buscorepuestos4.png';
+import buscorepuestosImage5 from '../../images/projects/buscorepuestos/buscorepuestos5.png';
 // Import icons
 import {
 	FiFacebook,
@@ -36,67 +24,27 @@ export const buscorepuestosProjectData = {
 		{
 			id: 1,
 			title: 'Venues List',
-			img: courtheroImage1,
+			img: buscorepuestosImage1,
 		},
 		{
 			id: 2,
 			title: 'Create Court',
-			img: courtheroImage2,
+			img: buscorepuestosImage2,
 		},
 		{
 			id: 3,
 			title: 'Add Season',
-			img: courtheroImage3,
+			img: buscorepuestosImage3,
 		},
 		{
 			id: 4,
 			title: 'Players List',
-			img: courtheroImage4,
+			img: buscorepuestosImage4,
 		},
 		{
 			id: 5,
 			title: 'Add Price Rules',
-			img: courtheroImage5,
-		},
-		{
-			id: 6,
-			title: 'Price Rules List',
-			img: courtheroImage6,
-		},
-		{
-			id: 7,
-			title: 'Booking Calendar Day view',
-			img: courtheroImage7,
-		},
-		{
-			id: 8,
-			title: 'Booking Calendar Week view',
-			img: courtheroImage8,
-		},
-		{
-			id: 9,
-			title: 'Booking1',
-			img: courtheroImage9,
-		},
-		{
-			id: 10,
-			title: 'Booking2',
-			img: courtheroImage10,
-		},
-		{
-			id: 11,
-			title: 'Reservation1',
-			img: courtheroImage11,
-		},
-		{
-			id: 12,
-			title: 'Settlement List',
-			img: courtheroImage12,
-		},
-		{
-			id: 13,
-			title: 'Reservation2',
-			img: courtheroImage13,
+			img: buscorepuestosImage5,
 		},
 	],
 	ProjectInfo: {
@@ -120,7 +68,7 @@ export const buscorepuestosProjectData = {
 		],
 		ObjectivesHeading: 'Objective',
 		ObjectivesDetails:
-			'A platform that specializes in connecting users with suppliers of spare parts for various vehicles, including cars, motorcycles, trucks, and buses.',
+			'A platform that specializes in connecting users with suppliers of spare parts for various vehicles, including cars, motorcycles, trucks, and buses. Another main goal of the application is to supply another business of data and metrics.',
 		Technologies: [
 			{
 				title: 'Tools & Technologies',
@@ -144,27 +92,27 @@ export const buscorepuestosProjectData = {
 			{
 				id: 1,
 				details:
-				'Courthero is an application designed to manage tennis clubs from all over the world. In it, the administrators of the clubs have the possibility to manage their fields with their schedules and details.',
+				'Update the entire ecosystem Buscorepuestos used, where the entire system (integrations and data) were in airtable.',
 			},
 			{
 				id: 2,
 				details:
-				'Club members can then make recurring reservations to play with other members or guest players. The calendar allows the club members to see all the bookings that can be made on any active field with different time slots with availability.',
+				'First, an entire ecosystem was developed to support the current system through serverless and web services and integrations with AWS, Azure and Zapier.',
 			},
 			{
 				id: 3,
 				details:
-				'When creating a reservation on a free slots, the application automatically calculates and show the price per player and per season with the time resetvation.',
+				'The implementation of a massive scrapping system for the main suppliers of spare parts, as well as the management of data and metrics, guaranteeing its high availability and integrity, as well as monitoring, and the measurement of all the processes that were developed to achieve this objective.',
 			},
 			{
 				id: 4,
 				details:
-				'The application allows club administrators collect all the pending information and send invoices to members. They can manage the invoices for each member who has make a reservations.',
+				'The development of a large number of new functionalities such as the integration of a new payment gateway with Stripe, integration of communication channels and bots, such as WhatsApp and its own bot within the web, and the improvement of performance and searches within the application with Algolia.',
 			},
 			{
 				id: 5,
 				details:
-				'In courthero the level of customization is very high, from being able to choose the logos of the courts and the avatars of the club members to creating seasons for each schedule, court, type of member and price rules to decide a price/hour.',
+				'All this was happening while a whole new architecture was developed to support all these processes and a large amount of data where management from airtable was very limited in all aspects and it went to microservices with databases and third-party integrations.',
 			},
 		],
 		SocialSharingHeading: 'Share This',
@@ -194,30 +142,5 @@ export const buscorepuestosProjectData = {
 				url: 'https://bolthornmakers.io/projects/8',
 			},
 		],
-	},
-	RelatedProject: {
-		title: 'Related Projects',
-		Projects: [
-			{
-				id: 1,
-				title: 'Mobile UI',
-				img: Image4,
-			},
-			{
-				id: 2,
-				title: 'Web Application',
-				img: Image5,
-			},
-			{
-				id: 3,
-				title: 'UI Design',
-				img: Image6,
-			},
-			{
-				id: 4,
-				title: 'Kabul Mobile App UI',
-				img: Image3,
-			},
-		],
-	},
+	}
 };

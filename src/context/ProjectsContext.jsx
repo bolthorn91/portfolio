@@ -1,7 +1,10 @@
 import { useState, createContext } from 'react';
 import { buscorepuestosProjectData } from '../data/projectData/buscorepuestos';
 import { courtheroProjectData } from '../data/projectData/courthero';
+import { inboxproProjectData } from '../data/projectData/inboxpro';
 import { projectsData } from '../data/projects';
+import { getRelatedProjects } from '../services/projects'
+
 
 
 // Create projects context
@@ -26,7 +29,7 @@ export const ProjectsProvider = (props) => {
 		return projectPreviews;
 	}
 
-	const projectList = [courtheroProjectData, buscorepuestosProjectData]
+	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData]
 	const [projects, setProjects] = useState(getProjectPreviews(projectList));
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
@@ -50,6 +53,8 @@ export const ProjectsProvider = (props) => {
 		return category.includes(selectProject);
 	});
 
+	const relatedProjects = getRelatedProjects(projectList);
+
 	return (
 		<ProjectsContext.Provider
 			value={{
@@ -62,6 +67,7 @@ export const ProjectsProvider = (props) => {
 				selectProject,
 				setSelectProject,
 				selectProjectsByCategory,
+				relatedProjects
 			}}
 		>
 			{props.children}

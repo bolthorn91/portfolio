@@ -12,10 +12,6 @@ import courtheroImage10 from '../../images/projects/courthero/courthero10.png';
 import courtheroImage11 from '../../images/projects/courthero/courthero11.png';
 import courtheroImage12 from '../../images/projects/courthero/courthero12.png';
 import courtheroImage13 from '../../images/projects/courthero/courthero13.png';
-import Image3 from '../../images/mobile-project-2.jpg';
-import Image4 from '../../images/mobile-project-1.jpg';
-import Image5 from '../../images/web-project-1.jpg';
-import Image6 from '../../images/ui-project-2.jpg';
 // Import icons
 import {
 	FiFacebook,
@@ -189,31 +185,6 @@ export const courtheroProjectData = {
 				name: 'LinkedIn',
 				icon: <FiLinkedin />,
 				url: 'https://bolthornmakers.io/projects/7',
-			},
-		],
-	},
-	RelatedProject: {
-		title: 'Related Projects',
-		Projects: [
-			{
-				id: 1,
-				title: 'Mobile UI',
-				img: Image4,
-			},
-			{
-				id: 2,
-				title: 'Web Application',
-				img: Image5,
-			},
-			{
-				id: 3,
-				title: 'UI Design',
-				img: Image6,
-			},
-			{
-				id: 4,
-				title: 'Kabul Mobile App UI',
-				img: Image3,
 			},
 		],
 	},
