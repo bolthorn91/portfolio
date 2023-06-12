@@ -3,10 +3,8 @@ import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 import HireMeModal from '../HireMeModal';
-// import logoLight from '../../images/logo-light.svg';
-// import logoDark from '../../images/logo-dark.svg';
-import logoDark from '../../images/bolthorn-logo-black.png';
-import logoLight from '../../images/bolthorn-logo-white.png';
+import logoDark from '../../images/blacklogohorizontal.svg';
+import logoLight from '../../images/whitelogohorizontal.svg';
 import { motion } from 'framer-motion';
 import Button from '../reusable/Button';
 
@@ -52,13 +50,13 @@ const AppHeader = () => {
 							{activeTheme === 'dark' ? (
 								<img
 									src={logoDark}
-									className="w-36"
+									className="w-48"
 									alt="Dark Logo"
 								/>
 							) : (
 								<img
 									src={logoLight}
-									className="w-36"
+									className="w-48"
 									alt="Dark Logo"
 								/>
 							)}

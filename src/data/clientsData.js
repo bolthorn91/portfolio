@@ -7,6 +7,7 @@ import NBImage from '../images/brands/nb_gray.png';
 import SamsungImage from '../images/brands/samsung_gray.png';
 import CanonImage from '../images/brands/canon_gray.png';
 import PumaImage from '../images/brands/puma_gray.png';
+import VodafoneImage from '../images/brands/vodafone_color.svg';
 
 export const clientsHeading = 'Some of the brands that trust me';
 
@@ -50,5 +51,10 @@ export const clientsData = [
 		id: 8,
 		title: 'PUMA',
 		img: PumaImage,
+	},
+	{
+		id: 9,
+		title: 'VODAFONE',
+		img: VodafoneImage,
 	},
 ];
