@@ -49,6 +49,7 @@ const ProjectRelatedProjects = () => {
 				{relatedProjects.map((project) => {
 					return (
 						<Link
+							key={project.id}
 							to={`/projects/single-project/${project.id}`}
 						>
 							<motion.div
@@ -56,7 +57,6 @@ const ProjectRelatedProjects = () => {
 								style={{overflow: 'hidden'}}
 								src={project.ProjectImages[0].img}
 								alt={project.ProjectHeader.title}
-								key={project.id}
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}

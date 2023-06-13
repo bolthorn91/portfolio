@@ -18,7 +18,7 @@ const ProjectSingle = () => {
 				setSingleProjectData(selectedProject)
 			}
 		}
-	}, [setSingleProjectData, id])
+	}, [setSingleProjectData, id, projectList])
 	
 	return (
 		singleProjectData && (

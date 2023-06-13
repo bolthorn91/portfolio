@@ -1,5 +1,5 @@
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useCallback, useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 const Slideshow = ({ images }) => {
@@ -24,13 +24,13 @@ const Slideshow = ({ images }) => {
         };
     };
 
-    const callbackAnimation = useCallback(debounce(async () => {
+    const callbackAnimation = debounce(async () => {
         controls.start('initial')
         controls.start('hover')
         return setTimeout(async () => {
             controls.start('initial');
         }, 800)
-    }), [])
+    })
   
     const nextImage = async () => {
         setCurrentImage((prevImage) => (prevImage === images.length - 1 ? 0 : prevImage + 1))
