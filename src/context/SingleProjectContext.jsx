@@ -4,11 +4,12 @@ import { courtheroProjectData } from '../data/projectData/courthero';
 import { buscorepuestosProjectData } from '../data/projectData/buscorepuestos';
 import { inboxproProjectData } from '../data/projectData/inboxpro';
 import { getRelatedProjects } from '../services/projects'
+import { ikeataiwanProjectData } from '../data/projectData/ikeataiwan';
 
 const SingleProjectContext = createContext();
 
 export const SingleProjectProvider = ({ children }) => {
-	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData]
+	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData, ikeataiwanProjectData]
 	const [singleProjectData, setSingleProjectData] = useState(
 		singleProjectDataJson
 	);

@@ -4,6 +4,7 @@ import { courtheroProjectData } from '../data/projectData/courthero';
 import { inboxproProjectData } from '../data/projectData/inboxpro';
 import { projectsData } from '../data/projects';
 import { getRelatedProjects } from '../services/projects'
+import { ikeataiwanProjectData } from '../data/projectData/ikeataiwan';
 
 
 
@@ -29,7 +30,7 @@ export const ProjectsProvider = (props) => {
 		return projectPreviews;
 	}
 
-	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData]
+	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData, ikeataiwanProjectData]
 	const [projects, setProjects] = useState(getProjectPreviews(projectList));
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');

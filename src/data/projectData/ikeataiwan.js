@@ -1,11 +1,13 @@
 // Import images
-import inboxproImage1 from '../../images/projects/inboxpro/inboxpro1.png';
-import inboxproImage2 from '../../images/projects/inboxpro/inboxpro2.png';
-import inboxproImage3 from '../../images/projects/inboxpro/inboxpro3.png';
-import inboxproImage4 from '../../images/projects/inboxpro/inboxpro4.png';
-import inboxproImage5 from '../../images/projects/inboxpro/inboxpro5.png';
-import inboxproImage6 from '../../images/projects/inboxpro/inboxpro6.png';
-import inboxproImage7 from '../../images/projects/inboxpro/inboxpro7.png';
+import ikeataiwanImage1 from '../../images/projects/ikeataiwan/ikeataiwan1.png';
+import ikeataiwanImage2 from '../../images/projects/ikeataiwan/ikeataiwan2.png';
+import ikeataiwanImage3 from '../../images/projects/ikeataiwan/ikeataiwan3.png';
+import ikeataiwanImage4 from '../../images/projects/ikeataiwan/ikeataiwan4.png';
+import ikeataiwanImage5 from '../../images/projects/ikeataiwan/ikeataiwan5.png';
+import ikeataiwanImage6 from '../../images/projects/ikeataiwan/ikeataiwan6.png';
+import ikeataiwanImage7 from '../../images/projects/ikeataiwan/ikeataiwan7.png';
+import ikeataiwanImage8 from '../../images/projects/ikeataiwan/ikeataiwan8.png';
+import ikeataiwanImage9 from '../../images/projects/ikeataiwan/ikeataiwan9.png';
 // Import icons
 import {
 	FiFacebook,
@@ -14,49 +16,59 @@ import {
 	FiTwitter,
 } from 'react-icons/fi';
 
-export const inboxproProjectData = {
-    id: 3,
-    category: 'Chrome extension',
+export const ikeataiwanProjectData = {
+    id: 4,
+    category: 'Web Application',
 	ProjectHeader: {
-		title: 'Inboxpro',
-		publishDate: 'June, 2019',
-		tags: ['Tech Lead', 'Chrome extensions'],
+		title: 'Ikea Taiwan',
+		publishDate: 'June, 2018',
+		tags: ['Senior Fullstack engineer'],
 	},
 	ProjectImages: [
 		{
 			id: 1,
-			title: 'Extension Store',
-			img: inboxproImage1,
+			title: 'Home',
+			img: ikeataiwanImage1,
 		},
 		{
 			id: 2,
-			title: 'AI Autocomplete',
-			img: inboxproImage2,
+			title: 'Recomendations',
+			img: ikeataiwanImage2,
 		},
 		{
 			id: 3,
-			title: 'Calendar Scheduling',
-			img: inboxproImage3,
+			title: 'Product detail',
+			img: ikeataiwanImage3,
 		},
 		{
 			id: 4,
-			title: 'Automated Follow-up Emails',
-			img: inboxproImage4,
+			title: 'Cart1',
+			img: ikeataiwanImage4,
 		},
 		{
 			id: 5,
-			title: 'Templates',
-			img: inboxproImage5,
+			title: 'Cart2',
+			img: ikeataiwanImage5,
 		},
 		{
 			id: 6,
-			title: 'Signatures',
-			img: inboxproImage6,
+			title: 'Payment Login',
+			img: ikeataiwanImage6,
 		},
 		{
 			id: 7,
-			title: 'Analytics',
-			img: inboxproImage7,
+			title: 'Payment Steps',
+			img: ikeataiwanImage7,
+		},
+		{
+			id: 8,
+			title: 'Payment Methods',
+			img: ikeataiwanImage8,
+		},
+		{
+			id: 9,
+			title: 'Service Planner',
+			img: ikeataiwanImage9,
 		},
 	],
 	ProjectInfo: {
@@ -65,22 +77,22 @@ export const inboxproProjectData = {
 			{
 				id: 1,
 				title: 'Name',
-				details: 'Inboxpro',
+				details: 'Ikea Taiwan',
 			},
 			{
 				id: 2,
 				title: 'Services',
-				details: 'Tech Lead',
+				details: 'Senior Fullstack engineer',
 			},
 			{
 				id: 3,
 				title: 'Website',
-				details: 'https://inboxpro.io/es/',
+				details: 'https://www.ikea.com.tw/zh',
 			},
 		],
 		ObjectivesHeading: 'Objective',
 		ObjectivesDetails:
-			'A chrome extension designed to boost your productivity and turn Gmail into a powerful automated machine',
+			'Design and implement the new Ikea marketplace with a CMS to manage its content and differente functionalities like service planner and virtual guides.',
 		Technologies: [
 			{
 				title: 'Tools & Technologies',
@@ -128,7 +140,7 @@ export const inboxproProjectData = {
 				id: 1,
 				name: 'Twitter',
 				icon: <FiTwitter />,
-				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/3',
+				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/4',
 			},
 			{
 				id: 2,
@@ -140,13 +152,13 @@ export const inboxproProjectData = {
 				id: 3,
 				name: 'Facebook',
 				icon: <FiFacebook />,
-				url: 'https://bolthornmakers.io/projects/3',
+				url: 'https://bolthornmakers.io/projects/4',
 			},
 			{
 				id: 4,
 				name: 'LinkedIn',
 				icon: <FiLinkedin />,
-				url: 'https://bolthornmakers.io/projects/3',
+				url: 'https://bolthornmakers.io/projects/4',
 			},
 		],
 	},
