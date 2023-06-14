@@ -3,39 +3,50 @@ import {
 	FiTwitter,
 	FiLinkedin,
 	FiGlobe,
-	FiYoutube,
 } from 'react-icons/fi';
 import AppFooterCopyright from './AppFooterCopyright';
-
-const socialLinks = [
-	{
-		id: 1,
-		icon: <FiGlobe />,
-		url: 'https://github.com/bolthorn91',
-	},
-	{
-		id: 2,
-		icon: <FiGithub />,
-		url: 'https://github.com/bolthorn91',
-	},
-	{
-		id: 3,
-		icon: <FiTwitter />,
-		url: 'https://twitter.com/JuanCruzM91',
-	},
-	{
-		id: 4,
-		icon: <FiLinkedin />,
-		url: 'https://www.linkedin.com/in/juancruzfs/',
-	},
-	{
-		id: 5,
-		icon: <FiYoutube />,
-		url: 'https://www.codewars.com/users/bolthorn91',
-	},
-];
+import { CodeWarsIcon } from '../icons/codewars';
 
 const AppFooter = () => {
+	const getSVGSize = (viewportWidth) => {
+		if (viewportWidth < 640) {
+			return "20px";
+		}
+		if (viewportWidth < 768) {
+			return "24px"
+		}
+		return "30px"
+	}
+
+	const socialLinks = [
+		{
+			id: 1,
+			icon: <FiGlobe />,
+			url: 'https://github.com/bolthorn91',
+		},
+		{
+			id: 2,
+			icon: <FiGithub />,
+			url: 'https://github.com/bolthorn91',
+		},
+		{
+			id: 3,
+			icon: <FiTwitter />,
+			url: 'https://twitter.com/JuanCruzM91',
+		},
+		{
+			id: 4,
+			icon: <FiLinkedin />,
+			url: 'https://www.linkedin.com/in/juancruzfs/',
+		},
+		{
+			id: 5,
+			icon: <CodeWarsIcon width={getSVGSize(window.innerWidth)} height={getSVGSize(window.innerWidth)}/> ,
+			url: 'https://www.codewars.com/users/bolthorn91',
+		},
+	];
+	const viewportWidth = window.innerWidth
+	console.log({viewportWidth})
 	return (
 		<div className="container mx-auto">
 			<div className="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark">
