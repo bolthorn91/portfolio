@@ -1,13 +1,13 @@
 // Import images
-import ikeataiwanImage1 from '../../images/projects/ikeataiwan/ikeataiwan1.png';
-import ikeataiwanImage2 from '../../images/projects/ikeataiwan/ikeataiwan2.png';
-import ikeataiwanImage3 from '../../images/projects/ikeataiwan/ikeataiwan3.png';
-import ikeataiwanImage4 from '../../images/projects/ikeataiwan/ikeataiwan4.png';
-import ikeataiwanImage5 from '../../images/projects/ikeataiwan/ikeataiwan5.png';
-import ikeataiwanImage6 from '../../images/projects/ikeataiwan/ikeataiwan6.png';
-import ikeataiwanImage7 from '../../images/projects/ikeataiwan/ikeataiwan7.png';
-import ikeataiwanImage8 from '../../images/projects/ikeataiwan/ikeataiwan8.png';
-import ikeataiwanImage9 from '../../images/projects/ikeataiwan/ikeataiwan9.png';
+import ikeataiwanImage1 from 'images/projects/ikeataiwan/ikeataiwan1.png';
+import ikeataiwanImage2 from 'images/projects/ikeataiwan/ikeataiwan2.png';
+import ikeataiwanImage3 from 'images/projects/ikeataiwan/ikeataiwan3.png';
+import ikeataiwanImage4 from 'images/projects/ikeataiwan/ikeataiwan4.png';
+import ikeataiwanImage5 from 'images/projects/ikeataiwan/ikeataiwan5.png';
+import ikeataiwanImage6 from 'images/projects/ikeataiwan/ikeataiwan6.png';
+import ikeataiwanImage7 from 'images/projects/ikeataiwan/ikeataiwan7.png';
+import ikeataiwanImage8 from 'images/projects/ikeataiwan/ikeataiwan8.png';
+import ikeataiwanImage9 from 'images/projects/ikeataiwan/ikeataiwan9.png';
 // Import icons
 import {
 	FiFacebook,

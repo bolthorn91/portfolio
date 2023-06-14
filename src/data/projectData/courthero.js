@@ -1,17 +1,17 @@
 // Import images
-import courtheroImage1 from '../../images/projects/courthero/courthero1.png';
-import courtheroImage2 from '../../images/projects/courthero/courthero2.png';
-import courtheroImage3 from '../../images/projects/courthero/courthero3.png';
-import courtheroImage4 from '../../images/projects/courthero/courthero4.png';
-import courtheroImage5 from '../../images/projects/courthero/courthero5.png';
-import courtheroImage6 from '../../images/projects/courthero/courthero6.png';
-import courtheroImage7 from '../../images/projects/courthero/courthero7.png';
-import courtheroImage8 from '../../images/projects/courthero/courthero8.png';
-import courtheroImage9 from '../../images/projects/courthero/courthero9.png';
-import courtheroImage10 from '../../images/projects/courthero/courthero10.png';
-import courtheroImage11 from '../../images/projects/courthero/courthero11.png';
-import courtheroImage12 from '../../images/projects/courthero/courthero12.png';
-import courtheroImage13 from '../../images/projects/courthero/courthero13.png';
+import courtheroImage1 from 'images/projects/courthero/courthero1.png';
+import courtheroImage2 from 'images/projects/courthero/courthero2.png';
+import courtheroImage3 from 'images/projects/courthero/courthero3.png';
+import courtheroImage4 from 'images/projects/courthero/courthero4.png';
+import courtheroImage5 from 'images/projects/courthero/courthero5.png';
+import courtheroImage6 from 'images/projects/courthero/courthero6.png';
+import courtheroImage7 from 'images/projects/courthero/courthero7.png';
+import courtheroImage8 from 'images/projects/courthero/courthero8.png';
+import courtheroImage9 from 'images/projects/courthero/courthero9.png';
+import courtheroImage10 from 'images/projects/courthero/courthero10.png';
+import courtheroImage11 from 'images/projects/courthero/courthero11.png';
+import courtheroImage12 from 'images/projects/courthero/courthero12.png';
+import courtheroImage13 from 'images/projects/courthero/courthero13.png';
 // Import icons
 import {
 	FiFacebook,

@@ -1,9 +1,9 @@
 // Import images
-import buscorepuestosImage1 from '../../images/projects/buscorepuestos/buscorepuestos1.png';
-import buscorepuestosImage2 from '../../images/projects/buscorepuestos/buscorepuestos2.png';
-import buscorepuestosImage3 from '../../images/projects/buscorepuestos/buscorepuestos3.png';
-import buscorepuestosImage4 from '../../images/projects/buscorepuestos/buscorepuestos4.png';
-import buscorepuestosImage5 from '../../images/projects/buscorepuestos/buscorepuestos5.png';
+import buscorepuestosImage1 from 'images/projects/buscorepuestos/buscorepuestos1.png';
+import buscorepuestosImage2 from 'images/projects/buscorepuestos/buscorepuestos2.png';
+import buscorepuestosImage3 from 'images/projects/buscorepuestos/buscorepuestos3.png';
+import buscorepuestosImage4 from 'images/projects/buscorepuestos/buscorepuestos4.png';
+import buscorepuestosImage5 from 'images/projects/buscorepuestos/buscorepuestos5.png';
 // Import icons
 import {
 	FiFacebook,

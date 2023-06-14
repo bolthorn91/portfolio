@@ -1,11 +1,11 @@
 // Import images
-import inboxproImage1 from '../../images/projects/inboxpro/inboxpro1.png';
-import inboxproImage2 from '../../images/projects/inboxpro/inboxpro2.png';
-import inboxproImage3 from '../../images/projects/inboxpro/inboxpro3.png';
-import inboxproImage4 from '../../images/projects/inboxpro/inboxpro4.png';
-import inboxproImage5 from '../../images/projects/inboxpro/inboxpro5.png';
-import inboxproImage6 from '../../images/projects/inboxpro/inboxpro6.png';
-import inboxproImage7 from '../../images/projects/inboxpro/inboxpro7.png';
+import inboxproImage1 from 'images/projects/inboxpro/inboxpro1.png';
+import inboxproImage2 from 'images/projects/inboxpro/inboxpro2.png';
+import inboxproImage3 from 'images/projects/inboxpro/inboxpro3.png';
+import inboxproImage4 from 'images/projects/inboxpro/inboxpro4.png';
+import inboxproImage5 from 'images/projects/inboxpro/inboxpro5.png';
+import inboxproImage6 from 'images/projects/inboxpro/inboxpro6.png';
+import inboxproImage7 from 'images/projects/inboxpro/inboxpro7.png';
 // Import icons
 import {
 	FiFacebook,
