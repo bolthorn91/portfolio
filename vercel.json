@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/backend/(.*)",
+            "destination": "https://bolthornmakersbackend.cyclic.app",
+            "headers": {
+                "host": "bolthornmakersbackend.cyclic.app",
+                "x-forwarded-host": "bolthornmakersbackend.cyclic.app"
+            }
+        }
+    ]
+}

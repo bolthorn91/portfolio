@@ -40,6 +40,13 @@ const ContactForm = () => {
 		}
 	}
 
+	const getUrl = () => {
+		if (process.env.REACT_APP_PROD) {
+			return '/backend'
+		}
+		return process.env.REACT_APP_BACKEND_URL;
+	}
+
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		if (Object.keys(formData).every(key => !!formData[key])) {
@@ -54,7 +61,7 @@ const ContactForm = () => {
 						}
 						return payload
 					}, {})
-				fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+				fetch(`${getUrl()}/contact`, {
 					headers: {
 						"Accept": "*/*",
 						"Content-Type": "application/json"
