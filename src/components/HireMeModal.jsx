@@ -1,15 +1,61 @@
 import { motion } from 'framer-motion';
 import { FiX } from 'react-icons/fi';
 import Button from './reusable/Button';
+import { useState } from 'react';
 
-const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
-];
 
 const HireMeModal = ({ onClose, onRequest }) => {
+	const selectOptions = [
+		'Web Application',
+		'Mobile Application',
+		'UI/UX Design',
+		'Branding',
+	];
+	
+	const initialFormState = {
+		name: '',
+		email: '',
+		subject: selectOptions[0],
+		message: ''
+	}
+	
+	const [formData, setFormData] = useState(initialFormState)
+
+	const handleChange = (e) => {
+		const { name: key, value } = e.target;
+		setFormData((prev) => ({ ...prev, [key]: value}));
+	}
+
+	const onSubmit = async (e) => {
+		e.preventDefault();
+		if (Object.keys(formData).every(key => !!formData[key])) {
+			try {
+				const payload = Object
+					.keys(formData)
+					.reduce((acc, current) => {
+						let key = current === 'email' ? 'from' : current
+						const payload = {
+							...acc, 
+							[key]: formData[current]
+						}
+						return payload
+					}, {})
+				fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+					headers: {
+						"Accept": "*/*",
+						"Content-Type": "application/json"
+					},
+					method: 'POST',
+					body: JSON.stringify(payload)
+				})
+				setFormData(initialFormState)
+				onRequest()
+			} catch (error) {
+				console.log({error})
+			}
+		}
+	}
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -29,6 +75,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 								What project are you looking for?
 							</h5>
 							<button
+								type="button"
 								onClick={onClose}
 								className="px-4 font-bold text-primary-dark dark:text-primary-light"
 							>
@@ -37,9 +84,6 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						</div>
 						<div className="modal-body p-5 w-full h-full">
 							<form
-								onSubmit={(e) => {
-									e.preventDefault();
-								}}
 								className="max-w-xl m-4 text-left"
 							>
 								<div className="">
@@ -48,9 +92,11 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										id="name"
 										name="name"
 										type="text"
-										required=""
+										required
 										placeholder="Name"
 										aria-label="Name"
+										value={formData.name}
+										onChange={handleChange}
 									/>
 								</div>
 								<div className="mt-6">
@@ -59,9 +105,11 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										id="email"
 										name="email"
 										type="text"
-										required=""
+										required
 										placeholder="Email"
 										aria-label="Email"
+										value={formData.email}
+										onChange={handleChange}
 									/>
 								</div>
 								<div className="mt-6">
@@ -70,13 +118,16 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										id="subject"
 										name="subject"
 										type="text"
-										required=""
+										required
 										aria-label="Project Category"
+										value={formData.subject}
+										onChange={handleChange}
 									>
 										{selectOptions.map((option) => (
 											<option
 												className="text-normal sm:text-md"
 												key={option}
+												value={option}
 											>
 												{option}
 											</option>
@@ -93,12 +144,15 @@ const HireMeModal = ({ onClose, onRequest }) => {
 										rows="6"
 										aria-label="Details"
 										placeholder="Project description"
+										required
+										value={formData.message}
+										onChange={handleChange}
 									></textarea>
 								</div>
 
 								<div className="mt-6 pb-4 sm:pb-1">
 									<span
-										onClick={onClose}
+										onClick={onSubmit}
 										type="submit"
 										className="px-4
 											sm:px-6
@@ -127,7 +181,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 									focus:ring-1 focus:ring-indigo-900 duration-500"
 								aria-label="Close Modal"
 							>
-								<Button title="Close" />
+								<Button type={"button"} title="Close" />
 							</span>
 						</div>
 					</div>

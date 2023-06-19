@@ -20,14 +20,17 @@ const ContactForm = () => {
 		setFormData((prev) => ({ ...prev, [key]: value}));
 	}
 
-	function showHireMeModal() {
+	function showModalFunction() {
 		if (!showModal) {
 			document
 				.getElementsByTagName('html')[0]
 				.classList.add('overflow-y-hidden');
 			setShowModal(true);
 			setTimeout(() => {
-				setShowModal(false)
+				document
+				.getElementsByTagName('html')[0]
+				.classList.remove('overflow-y-hidden');
+				setShowModal(false);
 			}, 2000);
 		} else {
 			document
@@ -37,39 +40,41 @@ const ContactForm = () => {
 		}
 	}
 
+	const onSubmit = async (e) => {
+		e.preventDefault();
+		if (Object.keys(formData).every(key => !!formData[key])) {
+			try {
+				const payload = Object
+					.keys(formData)
+					.reduce((acc, current) => {
+						let key = current === 'email' ? 'from' : current
+						const payload = {
+							...acc, 
+							[key]: formData[current]
+						}
+						return payload
+					}, {})
+				fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+					headers: {
+						"Accept": "*/*",
+						"Content-Type": "application/json"
+					},
+					method: 'POST',
+					body: JSON.stringify(payload)
+				})
+				setFormData(initialFormState)
+				showModalFunction()
+			} catch (error) {
+				console.log({error})
+			}
+		}
+	}
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={async (e) => {
-						e.preventDefault();
-						if (Object.keys(formData).every(key => !!formData[key])) {
-							try {
-								const payload = Object
-									.keys(formData)
-									.reduce((acc, current) => {
-										let key = current === 'email' ? 'from' : current
-										const payload = {
-											...acc, 
-											[key]: formData[current]
-										}
-										return payload
-									}, {})
-								fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
-									headers: {
-										"Accept": "*/*",
-										"Content-Type": "application/json"
-									},
-									method: 'POST',
-									body: JSON.stringify(payload)
-								})
-								setFormData(initialFormState)
-								showHireMeModal()
-							} catch (error) {
-								console.log({error})
-							}
-						}
-					}}
+					onSubmit={onSubmit}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
 					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
@@ -144,7 +149,7 @@ const ContactForm = () => {
 					exitBeforeEnter={true}
 					onExitComplete={() => null}
 				>
-					{showModal && <Modal handleClose={showHireMeModal} />}
+					{showModal && <Modal handleClose={showModalFunction} />}
 				</AnimatePresence>
 			</div>
 		</div>

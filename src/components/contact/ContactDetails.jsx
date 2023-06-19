@@ -18,7 +18,7 @@ const contacts = [
 	{
 		id: 2,
 		htmlLink: (
-			<a className="text-lg mb-4 text-ternary-dark dark:text-ternary-light" href='mailto:bolthorn91@gmail.com'>bolthorn91@gmail.com</a>
+			<a className="text-lg mb-4 text-ternary-dark dark:text-ternary-light" href='mailto:bolthorn91@gmail.com'>bolthornmakers@gmail.com</a>
 		),
 		icon: <FiMail />,
 	},

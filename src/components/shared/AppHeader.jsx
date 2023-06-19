@@ -7,11 +7,15 @@ import logoDark from '../../images/blacklogohorizontal.svg';
 import logoLight from '../../images/whitelogohorizontal.svg';
 import { motion } from 'framer-motion';
 import Button from '../reusable/Button';
+import Modal from '../Modal';
+import { AnimatePresence } from 'framer-motion';
+
 
 const AppHeader = () => {
 	const [showMenu, setShowMenu] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const [activeTheme, setTheme] = useThemeSwitcher();
+	const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
 	function toggleMenu() {
 		if (!showMenu) {
@@ -32,6 +36,26 @@ const AppHeader = () => {
 				.getElementsByTagName('html')[0]
 				.classList.remove('overflow-y-hidden');
 			setShowModal(false);
+		}
+	}
+
+	function showConfirmationModalFunction() {
+		if (!showConfirmationModal) {
+			document
+				.getElementsByTagName('html')[0]
+				.classList.add('overflow-y-hidden');
+			setShowConfirmationModal(true);
+			setTimeout(() => {
+				document
+					.getElementsByTagName('html')[0]
+					.classList.remove('overflow-y-hidden');
+				setShowConfirmationModal(false)
+			}, 2000);
+		} else {
+			document
+				.getElementsByTagName('html')[0]
+				.classList.remove('overflow-y-hidden');
+			setShowConfirmationModal(false);
 		}
 	}
 
@@ -195,9 +219,19 @@ const AppHeader = () => {
 				{showModal ? (
 					<HireMeModal
 						onClose={showHireMeModal}
-						onRequest={showHireMeModal}
+						onRequest={() => {
+							showHireMeModal()
+							showConfirmationModalFunction()
+						}}
 					/>
 				) : null}
+				<AnimatePresence
+					initial={false}
+					exitBeforeEnter={true}
+					onExitComplete={() => null}
+				>
+					{showConfirmationModal && <Modal handleClose={showConfirmationModalFunction} />}
+				</AnimatePresence>
 			</div>
 		</motion.nav>
 	);
