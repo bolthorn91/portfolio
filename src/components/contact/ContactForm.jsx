@@ -1,5 +1,7 @@
+import { AnimatePresence } from 'framer-motion';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import Modal from '../Modal';
 import { useState } from 'react';
 
 const ContactForm = () => {
@@ -11,13 +13,28 @@ const ContactForm = () => {
 	}
 
 	const [formData, setFormData] = useState(initialFormState)
-	const [showModal, setShowModal] = useState({
-
-	})
+	const [showModal, setShowModal] = useState(false)
 
 	const handleChange = (e) => {
 		const { name: key, value } = e.target;
 		setFormData((prev) => ({ ...prev, [key]: value}));
+	}
+
+	function showHireMeModal() {
+		if (!showModal) {
+			document
+				.getElementsByTagName('html')[0]
+				.classList.add('overflow-y-hidden');
+			setShowModal(true);
+			setTimeout(() => {
+				setShowModal(false)
+			}, 2000);
+		} else {
+			document
+				.getElementsByTagName('html')[0]
+				.classList.remove('overflow-y-hidden');
+			setShowModal(false);
+		}
 	}
 
 	return (
@@ -47,6 +64,7 @@ const ContactForm = () => {
 									body: JSON.stringify(payload)
 								})
 								setFormData(initialFormState)
+								showHireMeModal()
 							} catch (error) {
 								console.log({error})
 							}
@@ -119,6 +137,15 @@ const ContactForm = () => {
 						/>
 					</div>
 				</form>
+			</div>
+			<div>
+				<AnimatePresence
+					initial={false}
+					exitBeforeEnter={true}
+					onExitComplete={() => null}
+				>
+					{showModal && <Modal handleClose={showHireMeModal} />}
+				</AnimatePresence>
 			</div>
 		</div>
 	);
