@@ -1,13 +1,56 @@
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import { useState } from 'react';
 
 const ContactForm = () => {
+	const initialFormState = {
+		name: '',
+		email: '',
+		subject: '',
+		message: ''
+	}
+
+	const [formData, setFormData] = useState(initialFormState)
+	const [showModal, setShowModal] = useState({
+
+	})
+
+	const handleChange = (e) => {
+		const { name: key, value } = e.target;
+		setFormData((prev) => ({ ...prev, [key]: value}));
+	}
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={(e) => {
+					onSubmit={async (e) => {
 						e.preventDefault();
+						if (Object.keys(formData).every(key => !!formData[key])) {
+							try {
+								const payload = Object
+									.keys(formData)
+									.reduce((acc, current) => {
+										let key = current === 'email' ? 'from' : current
+										const payload = {
+											...acc, 
+											[key]: formData[current]
+										}
+										return payload
+									}, {})
+								fetch(`${process.env.REACT_APP_BACKEND_URL}/contact`, {
+									headers: {
+										"Accept": "*/*",
+										"Content-Type": "application/json"
+									},
+									method: 'POST',
+									body: JSON.stringify(payload)
+								})
+								setFormData(initialFormState)
+							} catch (error) {
+								console.log({error})
+							}
+						}
 					}}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
@@ -22,6 +65,8 @@ const ContactForm = () => {
 						inputName="name"
 						placeholderText="Your Name"
 						ariaLabelName="Name"
+						value={formData.name}
+						onChange={handleChange}
 					/>
 					<FormInput
 						inputLabel="Email"
@@ -31,6 +76,8 @@ const ContactForm = () => {
 						inputName="email"
 						placeholderText="Your email"
 						ariaLabelName="Email"
+						value={formData.email}
+						onChange={handleChange}
 					/>
 					<FormInput
 						inputLabel="Subject"
@@ -40,6 +87,8 @@ const ContactForm = () => {
 						inputName="subject"
 						placeholderText="Subject"
 						ariaLabelName="Subject"
+						value={formData.subject}
+						onChange={handleChange}
 					/>
 
 					<div className="mt-6">
@@ -50,12 +99,15 @@ const ContactForm = () => {
 							Message
 						</label>
 						<textarea
+							required
 							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 							id="message"
 							name="message"
 							cols="14"
 							rows="6"
 							aria-label="Message"
+							value={formData.message}
+							onChange={handleChange}
 						></textarea>
 					</div>
 
