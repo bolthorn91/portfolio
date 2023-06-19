@@ -59,6 +59,7 @@ const ContactForm = () => {
 						"Accept": "*/*",
 						"Content-Type": "application/json"
 					},
+					mode: 'no-cors',
 					method: 'POST',
 					body: JSON.stringify(payload)
 				})
