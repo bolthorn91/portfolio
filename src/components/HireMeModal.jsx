@@ -28,7 +28,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 
 	const getUrl = () => {
 		if (process.env.REACT_APP_PROD) {
-			return '/backend'
+			return '/api'
 		}
 		return process.env.REACT_APP_BACKEND_URL;
 	}
@@ -49,8 +49,9 @@ const HireMeModal = ({ onClose, onRequest }) => {
 					}, {})
 				fetch(`${getUrl()}/contact`, {
 					headers: {
-						"Accept": "*/*",
-						"Content-Type": "application/json"
+						"accept": "*/*",
+						// 'Content-Type': 'application/x-www-form-urlencoded',
+						'Content-Type': 'application/json',
 					},
 					mode: 'no-cors',
 					method: 'POST',
@@ -92,6 +93,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						</div>
 						<div className="modal-body p-5 w-full h-full">
 							<form
+								enctype="application/json"
 								className="max-w-xl m-4 text-left"
 							>
 								<div className="">

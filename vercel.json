@@ -1,11 +1,17 @@
 {
-    "rewrites": [
+    "functions": {
+        "api/contact.js": {
+            "memory": 1024,
+            "maxDuration": 10
+        }
+    },
+    "routes": [
         {
-            "source": "/backend/(.*)",
-            "destination": "https://bolthornmakersbackend.cyclic.app",
+            "src": "/api/contact",
+            "dest": "/api/contact.js",
             "headers": {
-                "host": "bolthornmakersbackend.cyclic.app",
-                "x-forwarded-host": "bolthornmakersbackend.cyclic.app"
+                "Content-Type": "application/json",
+                "Accept": "*/*"
             }
         }
     ]

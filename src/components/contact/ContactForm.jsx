@@ -42,7 +42,7 @@ const ContactForm = () => {
 
 	const getUrl = () => {
 		if (process.env.REACT_APP_PROD) {
-			return '/backend'
+			return '/api'
 		}
 		return process.env.REACT_APP_BACKEND_URL;
 	}
@@ -63,8 +63,9 @@ const ContactForm = () => {
 					}, {})
 				fetch(`${getUrl()}/contact`, {
 					headers: {
-						"Accept": "*/*",
-						"Content-Type": "application/json"
+						"accept": "*/*",
+						'Content-Type': 'application/json',
+						// 'Content-Type': 'application/x-www-form-urlencoded',
 					},
 					mode: 'no-cors',
 					method: 'POST',
@@ -81,7 +82,8 @@ const ContactForm = () => {
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
-				<form
+				<form 
+					enctype="application/json"
 					onSubmit={onSubmit}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
