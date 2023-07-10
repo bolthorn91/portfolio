@@ -1,13 +1,11 @@
 // Import images
-import ikeataiwanImage1 from 'images/projects/ikeataiwan/ikeataiwan1.png';
-import ikeataiwanImage2 from 'images/projects/ikeataiwan/ikeataiwan2.png';
-import ikeataiwanImage3 from 'images/projects/ikeataiwan/ikeataiwan3.png';
-import ikeataiwanImage4 from 'images/projects/ikeataiwan/ikeataiwan4.png';
-import ikeataiwanImage5 from 'images/projects/ikeataiwan/ikeataiwan5.png';
-import ikeataiwanImage6 from 'images/projects/ikeataiwan/ikeataiwan6.png';
-import ikeataiwanImage7 from 'images/projects/ikeataiwan/ikeataiwan7.png';
-import ikeataiwanImage8 from 'images/projects/ikeataiwan/ikeataiwan8.png';
-import ikeataiwanImage9 from 'images/projects/ikeataiwan/ikeataiwan9.png';
+import ikeafamilyImage1 from 'images/projects/ikeafamily/ikeafamily1.png';
+import ikeafamilyImage2 from 'images/projects/ikeafamily/ikeafamily2.png';
+import ikeafamilyImage3 from 'images/projects/ikeafamily/ikeafamily3.png';
+import ikeafamilyImage4 from 'images/projects/ikeafamily/ikeafamily4.png';
+import ikeafamilyImage5 from 'images/projects/ikeafamily/ikeafamily5.png';
+import ikeafamilyImage6 from 'images/projects/ikeafamily/ikeafamily6.png';
+import ikeafamilyImage7 from 'images/projects/ikeafamily/ikeafamily7.png';
 // Import icons
 import {
 	FiFacebook,
@@ -16,59 +14,49 @@ import {
 	FiTwitter,
 } from 'react-icons/fi';
 
-export const ikeataiwanProjectData = {
-    id: 4,
+export const ikeafamilyProjectData = {
+    id: 5,
     category: 'Web Application',
 	ProjectHeader: {
-		title: 'Ikea Taiwan',
-		publishDate: 'June, 2018',
-		tags: ['Senior Fullstack engineer'],
+		title: 'Ikea Family',
+		publishDate: 'January, 2018',
+		tags: ['Fullstack engineer'],
 	},
 	ProjectImages: [
 		{
 			id: 1,
-			title: 'Home',
-			img: ikeataiwanImage1,
+			title: 'Login',
+			img: ikeafamilyImage1,
 		},
 		{
 			id: 2,
-			title: 'Recomendations',
-			img: ikeataiwanImage2,
+			title: 'Register',
+			img: ikeafamilyImage2,
 		},
 		{
 			id: 3,
-			title: 'Product detail',
-			img: ikeataiwanImage3,
+			title: 'Card',
+			img: ikeafamilyImage3,
 		},
 		{
 			id: 4,
-			title: 'Cart1',
-			img: ikeataiwanImage4,
+			title: 'Services',
+			img: ikeafamilyImage4,
 		},
 		{
 			id: 5,
-			title: 'Cart2',
-			img: ikeataiwanImage5,
+			title: 'Offers',
+			img: ikeafamilyImage5,
 		},
 		{
 			id: 6,
-			title: 'Payment Login',
-			img: ikeataiwanImage6,
+			title: 'Gastronomy',
+			img: ikeafamilyImage6,
 		},
 		{
 			id: 7,
-			title: 'Payment Steps',
-			img: ikeataiwanImage7,
-		},
-		{
-			id: 8,
-			title: 'Payment Methods',
-			img: ikeataiwanImage8,
-		},
-		{
-			id: 9,
-			title: 'Service Planner',
-			img: ikeataiwanImage9,
+			title: 'Featured',
+			img: ikeafamilyImage7,
 		},
 	],
 	ProjectInfo: {
@@ -77,22 +65,22 @@ export const ikeataiwanProjectData = {
 			{
 				id: 1,
 				title: 'Name',
-				details: 'Ikea Taiwan',
+				details: 'Ikea Familt',
 			},
 			{
 				id: 2,
 				title: 'Services',
-				details: 'Senior Fullstack engineer',
+				details: 'Fullstack engineer',
 			},
 			{
 				id: 3,
 				title: 'Website',
-				details: 'https://www.ikea.com.tw/zh',
+				details: 'https://www.ikea.com/es/es/ikea-family/',
 			},
 		],
 		ObjectivesHeading: 'Objective',
 		ObjectivesDetails:
-			'Design and implement the new Ikea marketplace with a CMS to manage its content and differente functionalities like service planner and virtual guides.',
+			'Create the new Ikea Family web centralizing everything on a new platform from segregated services.',
 		Technologies: [
 			{
 				title: 'Tools & Technologies',
@@ -101,14 +89,9 @@ export const ikeataiwanProjectData = {
 					'CSS',
 					'Typescript',
 					'Vue',
-					'Vuex',
-					'TailwindCSS',
                     'PHP',
-                    'Laravel',
                     'Symfony',
-                    'Mysql',
-                    'AWS',
-                    'Docker'
+                    'PostgreSQL',
 				],
 			},
 		],
@@ -141,7 +124,7 @@ export const ikeataiwanProjectData = {
 				id: 1,
 				name: 'Twitter',
 				icon: <FiTwitter />,
-				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/4',
+				url: 'https://twitter.com/intent/tweet?text=https://bolthornmakers.io/projects/5',
 			},
 			{
 				id: 2,
@@ -153,13 +136,13 @@ export const ikeataiwanProjectData = {
 				id: 3,
 				name: 'Facebook',
 				icon: <FiFacebook />,
-				url: 'https://bolthornmakers.io/projects/4',
+				url: 'https://bolthornmakers.io/projects/5',
 			},
 			{
 				id: 4,
 				name: 'LinkedIn',
 				icon: <FiLinkedin />,
-				url: 'https://bolthornmakers.io/projects/4',
+				url: 'https://bolthornmakers.io/projects/5',
 			},
 		],
 	},

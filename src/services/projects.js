@@ -1,3 +1,12 @@
+import { bbvaProjectData } from "data/projectData/bbva";
+import { buscorepuestosProjectData } from "data/projectData/buscorepuestos";
+import { courtheroProjectData } from "data/projectData/courthero";
+import { ikeafamilyProjectData } from "data/projectData/ikeafamily";
+import { ikeataiwanProjectData } from "data/projectData/ikeataiwan";
+import { inboxproProjectData } from "data/projectData/inboxpro";
+import { santanderProjectData } from "data/projectData/santander";
+import { vodafoneProjectData } from "data/projectData/vodafone";
+
 export const getRelatedProjects = (_projectList) => {
     const getRandomNumber = (min = 0, max) => {
         const selectedNumber = Math.floor(Math.random() * (max -min + 1) + min);
@@ -21,3 +30,5 @@ export const getRelatedProjects = (_projectList) => {
     const selectedProjects = selectedProjectIndexes.map(value => _projectList[value]);
     return selectedProjects;
 }
+
+export const getProjectList = () => [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData, ikeataiwanProjectData, ikeafamilyProjectData, vodafoneProjectData, bbvaProjectData, santanderProjectData]

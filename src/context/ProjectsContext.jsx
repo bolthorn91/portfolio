@@ -1,10 +1,5 @@
 import { useState, createContext } from 'react';
-import { buscorepuestosProjectData } from '../data/projectData/buscorepuestos';
-import { courtheroProjectData } from '../data/projectData/courthero';
-import { inboxproProjectData } from '../data/projectData/inboxpro';
-import { projectsData } from '../data/projects';
-import { getRelatedProjects } from '../services/projects'
-import { ikeataiwanProjectData } from '../data/projectData/ikeataiwan';
+import { getProjectList, getRelatedProjects } from '../services/projects'
 
 
 
@@ -26,11 +21,11 @@ export const ProjectsProvider = (props) => {
 				tags: _project.ProjectHeader.tags,
 			}
 		}))
-		const projectPreviews = [...projectListPreviews, ...projectsData]
+		const projectPreviews = [...projectListPreviews]
 		return projectPreviews;
 	}
 
-	const projectList = [courtheroProjectData, buscorepuestosProjectData, inboxproProjectData, ikeataiwanProjectData]
+	const projectList = getProjectList();
 	const [projects, setProjects] = useState(getProjectPreviews(projectList));
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');

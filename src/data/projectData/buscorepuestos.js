@@ -23,27 +23,27 @@ export const buscorepuestosProjectData = {
 	ProjectImages: [
 		{
 			id: 1,
-			title: 'Venues List',
+			title: 'List',
 			img: buscorepuestosImage1,
 		},
 		{
 			id: 2,
-			title: 'Create Court',
+			title: 'Product Detail',
 			img: buscorepuestosImage2,
 		},
 		{
 			id: 3,
-			title: 'Add Season',
+			title: 'Payment',
 			img: buscorepuestosImage3,
 		},
 		{
 			id: 4,
-			title: 'Players List',
+			title: 'Car Registration Plate Search',
 			img: buscorepuestosImage4,
 		},
 		{
 			id: 5,
-			title: 'Add Price Rules',
+			title: 'Mobile',
 			img: buscorepuestosImage5,
 		},
 	],
