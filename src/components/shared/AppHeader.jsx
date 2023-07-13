@@ -59,6 +59,29 @@ const AppHeader = () => {
 		}
 	}
 
+	const navLinks = [
+		{
+			to: '/services',
+			label: 'Services',
+			text: 'Services'
+		},
+		{
+			to: '/projects',
+			label: 'Projects',
+			text: 'Projects'
+		},
+		{
+			to: '/about',
+			label: 'About Me',
+			text: 'About Me'
+		},
+		{
+			to: '/contact',
+			label: 'Contact',
+			text: 'Contact'
+		},
+	]
+
 	return (
 		<motion.nav
 			initial={{ opacity: 0 }}
@@ -131,27 +154,16 @@ const AppHeader = () => {
 							: 'hidden'
 					}
 				>
-					<Link
-						to="/projects"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-						aria-label="Projects"
-					>
-						Projects
-					</Link>
-					<Link
-						to="/about"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-						aria-label="About Me"
-					>
-						About Me
-					</Link>
-					<Link
-						to="/contact"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-						aria-label="Contact"
-					>
-						Contact
-					</Link>
+					{navLinks.map(({to, label, text}) => (
+						<Link
+							key={to}
+							to={to}
+							className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+							aria-label={label}
+						>
+							{text}
+						</Link>
+					))}
 					<div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
 						<span
 							onClick={showHireMeModal}
@@ -165,27 +177,16 @@ const AppHeader = () => {
 
 				{/* Header links large screen */}
 				<div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-					<Link
-						to="/projects"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-						aria-label="Projects"
-					>
-						Projects
-					</Link>
-					<Link
-						to="/about"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-						aria-label="About Me"
-					>
-						About Me
-					</Link>
-					<Link
-						to="/contact"
-						className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-						aria-label="Contact"
-					>
-						Contact
-					</Link>
+					{navLinks.map(({to, label, text}) => (
+						<Link
+							key={to}
+							to={to}
+							className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+							aria-label={label}
+						>
+							{text}
+						</Link>
+					))}
 				</div>
 
 				{/* Header right section buttons */}

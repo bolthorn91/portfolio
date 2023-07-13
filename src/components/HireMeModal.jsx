@@ -93,7 +93,7 @@ const HireMeModal = ({ onClose, onRequest }) => {
 						</div>
 						<div className="modal-body p-5 w-full h-full">
 							<form
-								enctype="application/json"
+								encType="application/json"
 								className="max-w-xl m-4 text-left"
 							>
 								<div className="">
