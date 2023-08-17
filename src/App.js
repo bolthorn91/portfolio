@@ -7,6 +7,8 @@ import AppHeader from './components/shared/AppHeader';
 import './css/App.css';
 import UseScrollToTop from './hooks/useScrollToTop';
 import { SingleProjectProvider } from './context/SingleProjectContext';
+import { inject } from '@vercel/analytics';
+
 
 
 const About = lazy(() => import('./pages/AboutMe'));
@@ -18,36 +20,39 @@ const Services = lazy(() => import('./pages/Services.jsx'));
 
 
 function App() {
+	inject();
 	return (
-		<AnimatePresence>
-			<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
-				<Router>
-					<ScrollToTop />
-					<AppHeader />
-					<Suspense fallback={""}>
-						<Routes>
-							<Route path="/" element={<Home />} />
-							<Route path="projects" element={<Projects />} />
-							<Route
-								path="projects/single-project/:id"
-								parans
-								element={<>
-								<SingleProjectProvider>
-									<ProjectSingle />
-								</SingleProjectProvider>
-								</>}
-							/>
+		<>
+			<AnimatePresence>
+				<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
+					<Router>
+						<ScrollToTop />
+						<AppHeader />
+						<Suspense fallback={""}>
+							<Routes>
+								<Route path="/" element={<Home />} />
+								<Route path="projects" element={<Projects />} />
+								<Route
+									path="projects/single-project/:id"
+									parans
+									element={<>
+									<SingleProjectProvider>
+										<ProjectSingle />
+									</SingleProjectProvider>
+									</>}
+								/>
 
-							<Route path="about" element={<About />} />
-							<Route path="contact" element={<Contact />} />
-							<Route path="services" element={<Services />} />
-						</Routes>
-					</Suspense>
-					<AppFooter />
-				</Router>
-				<UseScrollToTop />
-			</div>
-		</AnimatePresence>
+								<Route path="about" element={<About />} />
+								<Route path="contact" element={<Contact />} />
+								<Route path="services" element={<Services />} />
+							</Routes>
+						</Suspense>
+						<AppFooter />
+					</Router>
+					<UseScrollToTop />
+				</div>
+			</AnimatePresence>
+		</>
 	);
 }
 
