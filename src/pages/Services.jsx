@@ -1,8 +1,8 @@
 import Button from "../components/reusable/Button";
 import ContactDetails from '../components/contact/ContactDetails';
-import ContactForm from '../components/contact/ContactForm';
 import { motion } from "framer-motion";
 import ServicesResume from "components/services/ServicesResume";
+import ServicesForm from "components/contact/ServicesForm";
 
 const Services = () => {
 	return (
@@ -35,7 +35,7 @@ const Services = () => {
 				}}
 				className=" w-full mx-auto flex flex-col-reverse lg:flex-row py-5 lg:py-10 lg:mt-10"
 			>
-				<ContactForm />
+				<ServicesForm />
 				<ContactDetails />
 			</motion.div>
 		</div>

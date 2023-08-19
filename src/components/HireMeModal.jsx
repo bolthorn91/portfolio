@@ -8,8 +8,9 @@ const HireMeModal = ({ onClose, onRequest }) => {
 	const selectOptions = [
 		'Web Application',
 		'Mobile Application',
-		'UI/UX Design',
-		'Branding',
+		'Desktop Application',
+		'Consultancy',
+		'Mentoring'
 	];
 	
 	const initialFormState = {
