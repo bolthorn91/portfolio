@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .bolthorn-title {
+      @apply font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light;
+    }
+    .bolthorn-subtitle {
+      @apply text-lg mb-4 text-ternary-dark dark:text-ternary-light;
+    }
+    .bolthorn-subtitle {
+      @apply text-lg mb-4 text-ternary-dark dark:text-ternary-light;
+    }
+  }
