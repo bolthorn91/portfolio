@@ -8,6 +8,7 @@ import './css/App.css';
 import UseScrollToTop from './hooks/useScrollToTop';
 import { SingleProjectProvider } from './context/SingleProjectContext';
 import { inject } from '@vercel/analytics';
+import CVPage from 'pages/CV';
 
 
 
@@ -45,6 +46,7 @@ function App() {
 								<Route path="about" element={<About />} />
 								<Route path="contact" element={<Contact />} />
 								<Route path="services" element={<Services />} />
+								<Route path="cv" element={<CVPage />} />
 							</Routes>
 						</Suspense>
 						<AppFooter />

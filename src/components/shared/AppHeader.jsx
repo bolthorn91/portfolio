@@ -80,6 +80,11 @@ const AppHeader = () => {
 			label: 'Contact',
 			text: 'Contact'
 		},
+		{
+			to: '/cv',
+			label: 'CV',
+			text: 'CV'
+		},
 	]
 
 	return (
