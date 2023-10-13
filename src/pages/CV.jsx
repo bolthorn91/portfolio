@@ -5,6 +5,8 @@ import { CVHobbiesComponent } from "components/cv/CVHobbies";
 import { CVLanguagesComponent } from "components/cv/CVLanguages";
 import { CVSkillsComponent } from "components/cv/CVSkills";
 import { CVData } from "data/CVData";
+import { motion } from 'framer-motion';
+
 
 const CVPage = () => {
 	const titleClass = 'font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light'
@@ -26,10 +28,15 @@ const CVPage = () => {
 	const {name, position, contact, profiles, experiences, education, aboutMe, skills, languages, hobbies} = CVData
 
 	return (
-		<div className="container mx-auto">
-			<section className="py-5 sm:py-10 mt-5 sm:mt-10">
-				<p>{name}</p>
-				<p>{position}</p>
+		<motion.div 
+			initial={{ opacity: 0 }}
+            animate={{ opacity: 1, delay: 1 }}
+            exit={{ opacity: 0 }}
+            className="container mx-auto mb-10"
+		>
+			<section className="w-full text-center py-5 sm:py-10 mt-5 sm:mt-10">
+				<p className="mb-2 text-xl">{name}</p>
+				<p className="text-">{position}</p>
 			</section>
 			<CVContactComponent {...contact} profiles={profiles} />
 			<CVExperiencesComponent section="EXPERIENCES" experiences={experiences} />
@@ -38,7 +45,7 @@ const CVPage = () => {
 			<CVSkillsComponent skills={skills} />
 			<CVLanguagesComponent languages={languages} />
 			<CVHobbiesComponent hobbies={hobbies} />
-		</div>
+		</motion.div>
 	);
 };
 

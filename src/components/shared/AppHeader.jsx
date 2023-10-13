@@ -233,7 +233,7 @@ const AppHeader = () => {
 				) : null}
 				<AnimatePresence
 					initial={false}
-					exitBeforeEnter={true}
+					mode='wait'
 					onExitComplete={() => null}
 				>
 					{showConfirmationModal && <Modal handleClose={showConfirmationModalFunction} />}

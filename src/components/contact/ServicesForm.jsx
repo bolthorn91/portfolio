@@ -171,7 +171,7 @@ const ServicesForm = () => {
 			<div>
 				<AnimatePresence
 					initial={false}
-					exitBeforeEnter={true}
+					mode='wait'
 					onExitComplete={() => null}
 				>
 					{showModal && <Modal handleClose={showModalFunction} />}

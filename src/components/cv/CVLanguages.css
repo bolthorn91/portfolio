@@ -1,0 +1,18 @@
+
+
+#progress {
+    top: 20px;
+    left: 20px;
+}
+
+#progress > circle {
+    stroke-dashoffset: 0;
+    stroke-width: 15%;
+    stroke: black;
+    fill: none;
+}
+
+  
+#progress .indicator {
+    stroke: rgb(30 56 81);
+}

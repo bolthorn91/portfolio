@@ -612,6 +612,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-40 {
   width: 10rem;
 }
+.w-1 {
+  width: 0.25rem;
+}
+.w-2 {
+  width: 0.5rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-4 {
+  width: 1rem;
+}
 .w-5 {
   width: 1.25rem;
 }
@@ -729,6 +741,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-xl {
   border-radius: 0.75rem;
 }
+.rounded-2xl {
+  border-radius: 1rem;
+}
+.rounded-3xl {
+  border-radius: 1.25rem;
+}
+.rounded-4xl {
+  border-radius: 1.5rem;
+}
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -794,6 +815,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-ternary-light {
   --tw-bg-opacity: 1;
   background-color: rgb(246 247 248 / var(--tw-bg-opacity));
+}
+.bg-ternary-dark {
+  --tw-text-opacity: 1;
+  background-color: rgb(30 56 81 / var(--tw-text-opacity));
 }
 .bg-indigo-50 {
   --tw-bg-opacity: 1;

@@ -3,7 +3,7 @@ export const CVData = {
 	position: 'Senior Fullstack Software Engineer',
 	contact: {
 		ubication: 'Las Palmas de Gran Canaria',
-		email: 'bolhorn91@gmail.com',
+		email: 'bolthorn.dev@gmail.com',
 		phone: '+34690213153',
 	},
 	profiles: {
