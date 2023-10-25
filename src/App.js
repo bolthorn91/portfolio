@@ -1,14 +1,12 @@
 import { AnimatePresence } from 'framer-motion';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
-import AppFooter from './components/shared/AppFooter';
-import AppHeader from './components/shared/AppHeader';
 import './css/App.css';
 import UseScrollToTop from './hooks/useScrollToTop';
 import { SingleProjectProvider } from './context/SingleProjectContext';
 import { inject } from '@vercel/analytics';
 import CVPage from 'pages/CV';
+import { MainLayout } from 'layouts/MainLayout';
 
 
 
@@ -27,29 +25,29 @@ function App() {
 			<AnimatePresence>
 				<div className=" bg-secondary-light dark:bg-primary-dark transition duration-300">
 					<Router>
-						<ScrollToTop />
-						<AppHeader />
 						<Suspense fallback={""}>
-							<Routes>
-								<Route path="/" element={<Home />} />
-								<Route path="projects" element={<Projects />} />
-								<Route
-									path="projects/single-project/:id"
-									parans
-									element={<>
-									<SingleProjectProvider>
-										<ProjectSingle />
-									</SingleProjectProvider>
-									</>}
-								/>
+								<Routes>
+									<Route path="/" element={<MainLayout><Home /></MainLayout>} />
+									<Route path="projects" element={<MainLayout><Projects /></MainLayout>} />
+									<Route
+										path="projects/single-project/:id"
+										parans
+										element={(
+											<MainLayout>
+												<SingleProjectProvider>
+													<ProjectSingle />
+												</SingleProjectProvider>
+											</MainLayout>
+										)}
+									/>
 
-								<Route path="about" element={<About />} />
-								<Route path="contact" element={<Contact />} />
-								<Route path="services" element={<Services />} />
-								<Route path="cv" element={<CVPage />} />
-							</Routes>
+									<Route path="about" element={<MainLayout><About /></MainLayout>} />
+									<Route path="contact" element={<MainLayout><Contact /></MainLayout>} />
+									<Route path="services" element={<MainLayout><Services /></MainLayout>} />
+									<Route path="cv" element={<MainLayout><CVPage /></MainLayout>} />
+									<Route path="cv-generator" element={<CVPage />} />
+								</Routes>
 						</Suspense>
-						<AppFooter />
 					</Router>
 					<UseScrollToTop />
 				</div>
