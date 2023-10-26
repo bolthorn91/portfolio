@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { CVSectionHeader } from "./CVSectionHeader";
 import { motion, useInView } from 'framer-motion';
 
@@ -19,7 +19,7 @@ export const CVSkillsComponent = ({
             <div className="grid" style={{gridTemplateColumns: '20% 1fr'}}>
                 {skills.map(({name, level}, index) => (
                     <>
-                        <p>{name}: </p>
+                        <p key={index}>{name}: </p>
                         <motion.div 
                             style={{
                                 opacity: isInView ? 1 : 0,
@@ -27,8 +27,8 @@ export const CVSkillsComponent = ({
                             }}
                             className="flex"
                         >
-                            {Array.from({ length: 10 }).map((_, index) => (
-                                <div className={`rounded-4xl h-5 w-5 mr-4 ${getBackgroundColor(index, level)}`}></div>
+                            {Array.from({ length: 10 }).map((_, _index) => (
+                                <div key={_index} className={`rounded-4xl h-5 w-5 mr-4 ${getBackgroundColor(_index, level)}`}></div>
                             ))}
                         </motion.div>
                     </>

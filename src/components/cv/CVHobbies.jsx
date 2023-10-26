@@ -5,8 +5,8 @@ export const CVHobbiesComponent = ({
 }) => (
     <section>
         <CVSectionHeader title="HOBBIES"/>
-        {hobbies.map(({name, icon}) => (
-            <div><p>{name}</p></div>
+        {hobbies.map(({name, icon}, index) => (
+            <div key={index}><p>{name}</p></div>
         ))}
     </section>
 )

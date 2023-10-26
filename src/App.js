@@ -7,6 +7,7 @@ import { SingleProjectProvider } from './context/SingleProjectContext';
 import { inject } from '@vercel/analytics';
 import CVPage from 'pages/CV';
 import { MainLayout } from 'layouts/MainLayout';
+import CVSelectorPage from 'pages/CVSelector';
 
 
 
@@ -44,7 +45,8 @@ function App() {
 									<Route path="about" element={<MainLayout><About /></MainLayout>} />
 									<Route path="contact" element={<MainLayout><Contact /></MainLayout>} />
 									<Route path="services" element={<MainLayout><Services /></MainLayout>} />
-									<Route path="cv" element={<MainLayout><CVPage /></MainLayout>} />
+									<Route path="cv" element={<MainLayout><CVSelectorPage /></MainLayout>} />
+									<Route path='cv/:id' element={<MainLayout><CVPage/></MainLayout>} />
 									<Route path="cv-generator" element={<CVPage />} />
 								</Routes>
 						</Suspense>
