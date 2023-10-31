@@ -2,32 +2,53 @@ import { CodeWarsIcon } from "components/icons/codewars";
 import { CVSectionHeader } from "./CVSectionHeader";
 import { FaLocationDot } from "react-icons/fa6"
 import { FiGithub, FiLinkedin, FiMail, FiPhone} from "react-icons/fi"
+import { useContext } from 'react';
+import { CVPDFContext } from "pages/CV";
+
 
 
 export const CVContactComponent = ({
     ubication,
     email,
     phone,
-    profiles
+    profiles,
 }) => {
-	const getSVGSize = (viewportWidth) => {
+    const { isPdf } = useContext(CVPDFContext)
+
+    const getSVGSize = (viewportWidth, _isPdf = false, withPx = false) => {
+        let value;
+        if (_isPdf) {
+            if (viewportWidth < 640) {
+                value = withPx ? "14px" : 14 
+                return value;
+            }
+            if (viewportWidth < 768) {
+                value = withPx ? "18px" : 18
+                return value
+            }
+            value = withPx ? "18px" : 18
+            return value
+        }
 		if (viewportWidth < 640) {
-			return "20px";
+			value = withPx ? 20 : "20px"
+            return value
 		}
 		if (viewportWidth < 768) {
-			return "24px"
+			value = withPx ? 24 : "24px"
+            return value
 		}
-		return "30px"
+		value = withPx ? 30 : "30px"
+        return value
 	}
 
     const getScialIcon = (key) => {
         switch (key) {
             case 'github':
-                return <FiGithub />
+                return <FiGithub size={getSVGSize(window.innerWidth, isPdf)} />
             case 'linkedin':
-                return <FiLinkedin />
+                return <FiLinkedin size={getSVGSize(window.innerWidth, isPdf)} />
             case 'codewars':
-                return <CodeWarsIcon width={getSVGSize(window.innerWidth)} height={getSVGSize(window.innerWidth)}/>
+                return <CodeWarsIcon width={getSVGSize(window.innerWidth, isPdf, true)} height={getSVGSize(window.innerWidth, isPdf, true)}/>
             default:
                 return <></>;
         }
@@ -44,7 +65,7 @@ export const CVContactComponent = ({
     }
 
     return (
-        <section className="mb-10">
+        <section className={isPdf ? 'mb-4' : 'mb-10'}>
             <CVSectionHeader title="CONTACT"/>
             <div className="flex items-center mb-2">
                 <FaLocationDot className="mr-2"/>
@@ -58,7 +79,7 @@ export const CVContactComponent = ({
                 <FiPhone className="mr-2"/>
                 <p>{phone}</p>
             </div>
-            <ul className="flex gap-4 sm:gap-8">
+            <ul className={`flex ${isPdf ? 'gap-4 sm:gap-6' : 'gap-4 sm:gap-8'}`}>
                 {getSocialLinks(profiles).map((link) => (
                     <a
                         href={link.url}
@@ -72,7 +93,6 @@ export const CVContactComponent = ({
                     </a>
                 ))}
             </ul>
-            
         </section>
     ) 
 }

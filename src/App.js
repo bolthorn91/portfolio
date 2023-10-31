@@ -47,7 +47,7 @@ function App() {
 									<Route path="services" element={<MainLayout><Services /></MainLayout>} />
 									<Route path="cv" element={<MainLayout><CVSelectorPage /></MainLayout>} />
 									<Route path='cv/:id' element={<MainLayout><CVPage/></MainLayout>} />
-									<Route path="cv-generator" element={<CVPage />} />
+									<Route path='cv-generator/:id' element={<CVPage/>} />
 								</Routes>
 						</Suspense>
 					</Router>

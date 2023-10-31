@@ -11,7 +11,8 @@ import { motion } from 'framer-motion';
 
 export const CVComponent = ({
     CVData,
-    profileImage
+    profileImage,
+    pdfComponent
 }) => {
     const {name, position, contact, profiles, experiences, education, aboutMe, skills, languages, hobbies} = CVData
     return (
@@ -21,6 +22,7 @@ export const CVComponent = ({
             exit={{ opacity: 0 }}
             className="container mx-auto mb-10"
         >
+            {pdfComponent}
             <CVPersonalInfoComponent profileImage={profileImage} name={name} position={position} />
             <CVContactComponent {...contact} profiles={profiles} />
             <CVExperiencesComponent section="EXPERIENCES" experiences={experiences} />
