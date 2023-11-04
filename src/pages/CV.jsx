@@ -31,6 +31,13 @@ const CVPage = () => {
 		}
 	}, [id])
 
+	const onClick = async () => {
+		const response = await fetch(`http://localhost:5000/cv/${id}`)
+		const blob = await response.blob()
+		const link = window.URL.createObjectURL(blob);
+    	window.location = link
+	}
+
 	if (!data && !image) {
 		return null
 	}
@@ -44,10 +51,10 @@ const CVPage = () => {
 
 	const pdfComponent = (
 		<Link 
-			to={`/cv-generator/${id}`}
 			className="font-general-medium fixed flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 text-white text-lg sm:text-xl duration-300"
 			style={{bottom: '110px', right: '10px'}}
 			aria-label="Print PDF"
+			onClick={onClick}
 		>
 			<Button title={'Print PDF'} type={'button'}></Button>
 		</Link>
