@@ -61,8 +61,6 @@ const ServicesLearnAbout = () => {
         },
     ]
     const [text, setText] = useState('')
-    const [icon, setIcon] = useState('')
-    const [image, setImage] = useState('')
     const [wordIndex, setWordIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     let timer

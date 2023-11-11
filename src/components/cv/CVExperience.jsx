@@ -1,3 +1,5 @@
+import { CVPDFContext } from "pages/CV"
+import { useContext } from "react"
 
 
 export const CVExperienceComponent = ({
@@ -9,11 +11,19 @@ export const CVExperienceComponent = ({
     type,
     description
 }) => {
+    const { isPdf } = useContext(CVPDFContext)
+
     return (
-        <section className="mb-6 flex row">
+        <section className={`flex row ${isPdf ? 'mb-4' : 'mb-6'}`}>
             <div className="flex flex-col items-center p-x-2 h-auto mr-4">
-                 <div className="rounded-4xl bg-ternary-dark h-5 w-5"></div>
-                 <div className="w-1 h-full bg-ternary-dark"></div>
+                 <div 
+                    className="rounded-4xl bg-ternary-dark h-5 w-5" 
+                    style={{
+                        height: isPdf ? '0.7rem' : '', 
+                        width: isPdf ? '0.6rem' : ''
+                    }}
+                ></div>
+                 <div className="w-1 h-full bg-ternary-dark" style={{width: isPdf ? '0.15rem' : ''}}></div>
             </div>
             <div>
                 <h1 className="text-ternary-dark font-medium">{title}</h1>
