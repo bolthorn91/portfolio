@@ -1,10 +1,13 @@
 import { useLocation, useParams, Link } from "react-router-dom";
 import { CVComponent } from "components/cv/CV";
-import { CVData as juanData } from "data/CVData";
-import profileImage from '../images/profile.png';
+import { CVData as juanData } from "data/juanCVData";
+import { CVData as veroData } from "data/veroCVData";
 import { createContext, useEffect, useState } from "react";
 import { CVPDFComponent } from "components/cv/CVPDF";
 import Button from "components/reusable/Button";
+import juanProfileImage from '../images/profile.png';
+import veroProfileImage from '../images/vero_profile.png';
+
 
 export const CVPDFContext = createContext();
 
@@ -19,15 +22,19 @@ const CVPage = () => {
 		switch (id) {
 			case 'juan':
 				setData(juanData)
-				setImage(profileImage)
+				setImage(juanProfileImage)
 				break;
 			case 'edgar':
 				setData(juanData)
-				setImage(profileImage)
+				setImage(juanProfileImage)
+				break;
+			case 'veronica':
+				setData(veroData)
+				setImage(veroProfileImage)
 				break;
 			default:
 				setData(juanData)
-				setImage(profileImage)
+				setImage(juanProfileImage)
 		}
 	}, [id])
 

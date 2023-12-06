@@ -1,33 +1,25 @@
-import { CVData } from "data/CVData"
+import { CVData as juanCVData } from "data/juanCVData"
+import { CVData as veroCVData } from "data/veroCVData"
 import profileImage from '../images/profile.png';
-import profileImage2 from '../images/profile2.jpeg';
+import veroProfileImage from '../images/vero_profile.png';
 import { Link } from "react-router-dom";
 import { CVPersonalInfoComponent } from "components/cv/CVPersonalInfo";
 
 
 const CVSelectorPage = () => {
-	const {name, position } = CVData
-
-	const getProfileUrl = (_index) => {
-		switch (_index) {
-			case 1:
-				return 'juan'
-			case 2:
-				return 'edgar'
-			case 3:
-				return 'vero'
-			default:
-				return 'juan'
-		}
-	}
+	const profileNames = ['juan', 'veronica']
+	const profileData = [juanCVData, veroCVData]
 
 	return (
 		<>
-			{[profileImage, profileImage2].map((image, index) => (
-				<Link key={index} to={`${window.location.href}/${getProfileUrl(index + 1)}`}>
-					<CVPersonalInfoComponent profileImage={image} name={name} position={position} isSelector={true}/>
-				</Link>
-			))}
+			{[profileImage, veroProfileImage].map((image, index) => {
+				const {name, position} = profileData[index]
+				return (
+					<Link key={index} to={`${window.location.href}/${profileNames[index]}`}>
+						<CVPersonalInfoComponent profileImage={image} name={name} position={position} />
+					</Link>
+				)
+			})}
 		</>
 	);
 };
