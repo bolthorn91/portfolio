@@ -60,11 +60,11 @@ const AppHeader = () => {
 	}
 
 	const navLinks = [
-		{
-			to: '/services',
-			label: 'Services',
-			text: 'Services'
-		},
+		// {
+		// 	to: '/services',
+		// 	label: 'Services',
+		// 	text: 'Services'
+		// },
 		{
 			to: '/projects',
 			label: 'Projects',
@@ -81,7 +81,7 @@ const AppHeader = () => {
 			text: 'Contact'
 		},
 		{
-			to: '/cv',
+			to: '/cv/juan',
 			label: 'CV',
 			text: 'CV'
 		},
