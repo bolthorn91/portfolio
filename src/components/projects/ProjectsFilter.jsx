@@ -4,7 +4,7 @@ const selectOptions = [
 	'Chrome extension'
 ];
 
-const ProjectsFilter = ({ setSelectProject }) => {
+const ProjectsFilter = ({ selectedProject, setSelectProject }) => {
 	return (
 		<select
 			onChange={(e) => {
@@ -26,7 +26,7 @@ const ProjectsFilter = ({ setSelectProject }) => {
                 dark:text-ternary-light
             "
 		>
-			<option value={setSelectProject} className="text-sm sm:text-md">
+			<option value={selectedProject} className="text-sm sm:text-md">
 				All Projects
 			</option>
 
