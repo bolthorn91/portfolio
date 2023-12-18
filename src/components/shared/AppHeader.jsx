@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import Button from '../reusable/Button';
 import Modal from '../Modal';
 import { AnimatePresence } from 'framer-motion';
+import { LoginHeaderComponent } from './LoginHeader';
 
 
 const AppHeader = () => {
@@ -218,6 +219,7 @@ const AppHeader = () => {
 							<FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
 						)}
 					</div>
+					<LoginHeaderComponent></LoginHeaderComponent>
 				</div>
 			</div>
 			{/* Hire me modal */}
