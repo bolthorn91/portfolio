@@ -11,7 +11,7 @@ const navLinks = [
   { href: "#portfolio", label: "Portfolio" },
   { href: "#testimonios", label: "Testimonios" },
   { href: "#about", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/contact", label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -60,7 +60,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="#contacto"
+              href="/contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
             >
               Cuéntanos tu proyecto
@@ -99,7 +99,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#contacto"
+                href="/contact"
                 className="block mt-4 px-5 py-3 bg-primary text-white rounded-lg font-medium text-center"
                 onClick={() => setIsOpen(false)}
               >
