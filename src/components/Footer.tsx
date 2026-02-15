@@ -23,7 +23,7 @@ const socialLinks = [
   { icon: Github, href: "https://github.com/bolthorn91", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hola@bolthornmakers.com", label: "Email" },
+  { icon: Mail, href: "mailto:info@bolthornmakers.com", label: "Email" },
 ];
 
 export default function Footer() {

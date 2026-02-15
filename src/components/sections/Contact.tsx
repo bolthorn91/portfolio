@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle, Calendar } from "lucide-react";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
@@ -28,14 +28,14 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "hola@bolthornmakers.com",
-      href: "mailto:hola@bolthornmakers.com",
+      value: "info@bolthornmakers.com",
+      href: "mailto:info@bolthornmakers.com",
     },
     {
       icon: Phone,
       label: "Teléfono",
-      value: "+34 600 000 000",
-      href: "tel:+34600000000",
+      value: "+34 694 203 233",
+      href: "tel:+34694203233",
     },
     {
       icon: MapPin,
@@ -115,11 +115,44 @@ export default function Contact() {
                 Agenda una sesión estratégica gratuita y descubre cómo podemos ayudarte.
               </p>
               <a
-                href="mailto:hola@bolthornmakers.com"
+                href="mailto:info@bolthornmakers.com"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
               >
                 Agendar llamada
               </a>
+            </motion.div>
+
+            {/* Calendar Booking */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-8 p-6 bg-card rounded-2xl border border-border"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Calendar className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">Reserva una reunión</h3>
+                  <p className="text-sm text-muted-foreground">30 minutos gratis</p>
+                </div>
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">
+                Elige un horario que te venga bien y reserva una llamada gratuita de 30 minutos para discutir tu proyecto.
+              </p>
+              <a
+                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ18pMpx4L5NfqN0q0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all"
+              >
+                <Calendar className="w-4 h-4" />
+                Reservar reunión
+              </a>
+              <p className="text-xs text-muted-foreground mt-3 text-center">
+                O escríbenos a info@bolthornmakers.com
+              </p>
             </motion.div>
           </motion.div>
 
