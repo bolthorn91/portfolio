@@ -7,9 +7,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_PUBLIC_KEY = "bRkDCPeKJD_RxzcFq";
-const EMAILJS_SERVICE_ID = "service_zrn7agt";
-const EMAILJS_TEMPLATE_ID = "template_uueq1rc";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
