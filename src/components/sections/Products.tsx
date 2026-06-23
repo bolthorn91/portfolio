@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Building2, Home } from "lucide-react";
+import { ArrowRight, Sparkles, Home } from "lucide-react";
 import Link from "next/link";
 
 const products = [
@@ -32,7 +32,7 @@ const products = [
     ],
     status: "En desarrollo",
     comingSoon: true,
-    href: "#contacto",
+    href: "/contact",
   },
 ];
 
@@ -126,10 +126,10 @@ export default function Products() {
             ¿Tienes una idea para un producto digital?
           </p>
           <Link
-            href="#contacto"
+            href="/productos"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
           >
-            Hablemos de tu idea
+            Ver todos los productos
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>

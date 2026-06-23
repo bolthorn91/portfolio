@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -72,9 +73,9 @@ export default function Testimonials() {
             >
               <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/20" />
               
-              <p className="text-muted-foreground mb-6 relative z-10">
-                "{testimonial.content}"
-              </p>
+                <p className="text-muted-foreground mb-6 relative z-10">
+                  &ldquo;{testimonial.content}&rdquo;
+                </p>
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold">
@@ -90,6 +91,22 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <Link
+            href="/testimonios"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
+          >
+            Ver todos los testimonios
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

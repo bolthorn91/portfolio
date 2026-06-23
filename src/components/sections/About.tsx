@@ -66,7 +66,7 @@ export default function About() {
           viewport={{ once: true }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
         >
-          {stats.map((stat, index) => (
+            {stats.map((stat) => (
             <div
               key={stat.label}
               className="text-center p-6 bg-background rounded-2xl border border-border"

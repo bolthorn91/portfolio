@@ -3,19 +3,19 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 const footerLinks = {
   servicios: [
-    { label: "Desarrollo Web", href: "#servicios" },
-    { label: "Desarrollo Mobile", href: "#servicios" },
-    { label: "Consultoría IT", href: "#servicios" },
-    { label: "IA & Automatización", href: "#servicios" },
+    { label: "Desarrollo Web", href: "/servicios/web-development" },
+    { label: "Desarrollo Mobile", href: "/servicios/mobile-development" },
+    { label: "Consultoría IT", href: "/servicios/tech-consulting" },
+    { label: "IA & Automatización", href: "/servicios/artificial-intelligence" },
   ],
   productos: [
     { label: "Inmo Redesign", href: "https://inmo-redesign.bolthornmakers.com" },
-    { label: "Próximamente", href: "#productos" },
+    { label: "Próximamente", href: "/productos" },
   ],
   company: [
-    { label: "Sobre Nosotros", href: "#about" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Sobre Nosotros", href: "/nosotros" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contacto", href: "/contact" },
   ],
 };
 

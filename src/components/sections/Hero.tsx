@@ -58,14 +58,14 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
-              href="#contacto"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
             >
               Cuéntanos tu proyecto
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              href="#portfolio"
+              href="/portfolio"
               className="inline-flex items-center gap-2 px-8 py-4 bg-card border border-border hover:border-primary/50 text-foreground rounded-xl font-semibold transition-all"
             >
               Ver nuestro trabajo

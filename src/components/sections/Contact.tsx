@@ -103,25 +103,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* CTA Box */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8 p-6 bg-gradient-to-br from-primary to-secondary rounded-2xl text-white"
-            >
-              <h3 className="text-xl font-semibold mb-2">¿Listo para empezar?</h3>
-              <p className="text-white/80 mb-4">
-                Agenda una sesión estratégica gratuita y descubre cómo podemos ayudarte.
-              </p>
-              <a
-                href="mailto:info@bolthornmakers.com"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-              >
-                Agendar llamada
-              </a>
-            </motion.div>
-
             {/* Calendar Booking */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -142,7 +123,7 @@ export default function Contact() {
                 Elige un horario que te venga bien y reserva una llamada gratuita de 30 minutos para discutir tu proyecto.
               </p>
               <a
-                href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ18pMpx4L5NfqN0q0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0N0"
+                href="https://calendly.com/bolthornmakers/30min?primary_color=3b82f6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all"
