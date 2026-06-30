@@ -17,7 +17,7 @@ export default function AuthGate({ children, fallback }: AuthGateProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-8">
-        <Loader2 className="w-6 h-6 animate-spin text-primary" />
+        <Loader2 className="w-6 h-6 animate-spin text-white" />
       </div>
     )
   }
@@ -28,7 +28,7 @@ export default function AuthGate({ children, fallback }: AuthGateProps) {
     <>
       <div onClick={() => setShowModal(true)}>
         {fallback || (
-          <button className="w-full py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all">
+          <button className="w-full py-3 bg-white text-black text-sm font-medium uppercase tracking-[0.15em] transition-all">
             Inicia sesión para pagar
           </button>
         )}
@@ -77,32 +77,32 @@ function LoginModal({ onClose }: { onClose: () => void }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-card border border-border rounded-2xl p-8 w-full max-w-md relative"
+        className="bg-[#0a0a0a] border border-white/[0.06] p-8 w-full max-w-md relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground">
+        <button onClick={onClose} className="absolute top-4 right-4 text-white/40 hover:text-white">
           <X className="w-5 h-5" />
         </button>
 
         <h2 className="text-2xl font-bold mb-1">
           {mode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
         </h2>
-        <p className="text-muted-foreground text-sm mb-6">
+        <p className="text-white/40 text-sm mb-6">
           {mode === 'login' ? 'Para continuar con el pago' : 'Para solicitar presupuestos'}
         </p>
 
         <button
           onClick={signInWithGoogle}
-          className="w-full flex items-center justify-center gap-3 py-3 bg-background border border-border rounded-xl hover:border-primary/50 transition-all mb-4"
+          className="w-full flex items-center justify-center gap-3 py-3 bg-background border border-white/[0.06] hover:border-white/20 transition-all mb-4"
         >
           <Chrome className="w-5 h-5" />
           Continuar con Google
         </button>
 
         <div className="flex items-center gap-3 mb-4">
-          <div className="flex-1 h-px bg-border" />
-          <span className="text-sm text-muted-foreground">o</span>
-          <div className="flex-1 h-px bg-border" />
+          <div className="flex-1 h-px bg-white/[0.06]" />
+          <span className="text-sm text-white/40">o</span>
+          <div className="flex-1 h-px bg-white/[0.06]" />
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -113,7 +113,7 @@ function LoginModal({ onClose }: { onClose: () => void }) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2.5 bg-background border border-border rounded-xl focus:outline-none focus:border-primary transition-colors"
+              className="w-full px-4 py-2.5 bg-background border border-white/[0.06] focus:outline-none focus:border-white transition-colors"
               placeholder="tu@email.com"
             />
           </div>
@@ -125,30 +125,30 @@ function LoginModal({ onClose }: { onClose: () => void }) {
               minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2.5 bg-background border border-border rounded-xl focus:outline-none focus:border-primary transition-colors"
+              className="w-full px-4 py-2.5 bg-background border border-white/[0.06] focus:outline-none focus:border-white transition-colors"
               placeholder="••••••••"
             />
           </div>
 
           {error && (
-            <p className="text-sm text-red-400">{error}</p>
+            <p className="text-sm text-white/60">{error}</p>
           )}
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3 bg-primary hover:bg-primary-hover disabled:opacity-50 text-white rounded-xl font-medium transition-all flex items-center justify-center gap-2"
+            className="w-full py-3 bg-white disabled:opacity-50 text-black text-sm font-medium uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-2"
           >
             {submitting && <Loader2 className="w-4 h-4 animate-spin" />}
             {mode === 'login' ? 'Iniciar sesión' : 'Crear cuenta'}
           </button>
         </form>
 
-        <p className="text-center text-sm text-muted-foreground mt-4">
+        <p className="text-center text-sm text-white/40 mt-4">
           {mode === 'login' ? (
-            <>¿No tienes cuenta? <button onClick={() => { setMode('register'); setError(null) }} className="text-primary hover:underline">Regístrate</button></>
+            <>¿No tienes cuenta? <button onClick={() => { setMode('register'); setError(null) }} className="text-white hover:underline">Regístrate</button></>
           ) : (
-            <>¿Ya tienes cuenta? <button onClick={() => { setMode('login'); setError(null) }} className="text-primary hover:underline">Inicia sesión</button></>
+            <>¿Ya tienes cuenta? <button onClick={() => { setMode('login'); setError(null) }} className="text-white hover:underline">Inicia sesión</button></>
           )}
         </p>
       </motion.div>

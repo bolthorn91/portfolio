@@ -119,7 +119,7 @@ export default function QuoteTracker({ token }: Props) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-16">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        <Loader2 className="w-8 h-8 animate-spin text-white" />
       </div>
     )
   }
@@ -127,8 +127,8 @@ export default function QuoteTracker({ token }: Props) {
   if (error) {
     return (
       <div className="text-center py-16">
-        <p className="text-red-400 mb-4">{error}</p>
-        <button onClick={fetchQuote} className="text-primary hover:underline">Reintentar</button>
+        <p className="text-white/60 mb-4">{error}</p>
+        <button onClick={fetchQuote} className="text-white hover:underline">Reintentar</button>
       </div>
     )
   }
@@ -143,14 +143,14 @@ export default function QuoteTracker({ token }: Props) {
     <div className="max-w-3xl mx-auto space-y-10">
       {/* Header */}
       <div className="text-center">
-        <h1 className="text-3xl font-bold mb-2">Presupuesto {quote.reference}</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-4xl font-bold tracking-tight mb-2">Presupuesto {quote.reference}</h1>
+        <p className="text-white/40">
           Creado el {new Date(quote.createdAt).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
       </div>
 
       {/* Timeline */}
-      <div className="p-8 bg-card rounded-2xl border border-border">
+      <div className="p-8 bg-[#0a0a0a] border border-white/[0.06]">
         <h2 className="text-lg font-semibold mb-6">Estado</h2>
         <div className="relative">
           {displayStatuses.map((status, i) => {
@@ -161,26 +161,26 @@ export default function QuoteTracker({ token }: Props) {
             return (
               <div key={status} className="flex items-start gap-4 pb-6 last:pb-0 relative">
                 <div className="flex flex-col items-center">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center z-10 ${
-                    isPast ? 'bg-green-500/20 text-green-400' :
-                    isCurrent ? 'bg-primary/20 text-primary' :
-                    'bg-muted text-muted-foreground'
+                  <div className={`w-8 h-8 flex items-center justify-center z-10 ${
+                    isPast ? 'bg-white/20 text-white/60' :
+                    isCurrent ? 'bg-white/20 text-white' :
+                    'border border-white/[0.06] text-white/40'
                   }`}>
                     {isPast ? <CheckCircle className="w-5 h-5" /> : <Circle className="w-5 h-5" />}
                   </div>
                   {i < displayStatuses.length - 1 && (
                     <div className={`w-0.5 h-full absolute top-8 left-4 ${
-                      isPast ? 'bg-green-500/30' :
-                      isCurrent ? 'bg-primary/20' :
-                      'bg-border'
+                      isPast ? 'bg-white/20' :
+                      isCurrent ? 'bg-white/10' :
+                      'border-l border-white/[0.06]'
                     }`} />
                   )}
                 </div>
                 <div className="pt-1">
                   <p className={`font-medium ${
-                    isCurrent ? 'text-primary' :
-                    isPast ? 'text-foreground' :
-                    'text-muted-foreground'
+                    isCurrent ? 'text-white' :
+                    isPast ? 'text-white/60' :
+                    'text-white/40'
                   }`}>{label}</p>
                 </div>
               </div>
@@ -190,27 +190,27 @@ export default function QuoteTracker({ token }: Props) {
       </div>
 
       {/* Price Breakdown */}
-      <div className="p-8 bg-card rounded-2xl border border-border">
+      <div className="p-8 bg-[#0a0a0a] border border-white/[0.06]">
         <h2 className="text-lg font-semibold mb-4">Desglose de precios</h2>
         <div className="space-y-3">
           {quote.items.map((item, i) => (
             <div key={i} className="flex justify-between text-sm">
-              <span className="text-muted-foreground">{item.subcategoryName} x{item.quantity}</span>
+              <span className="text-white/40">{item.subcategoryName} x{item.quantity}</span>
               <span>{item.totalPrice.toLocaleString()}€</span>
             </div>
           ))}
           {quote.addons.map((addon, i) => (
             <div key={`a-${i}`} className="flex justify-between text-sm">
-              <span className="text-muted-foreground">{addon.name}</span>
+              <span className="text-white/40">{addon.name}</span>
               <span>{addon.price.toLocaleString()}€</span>
             </div>
           ))}
-          <div className="pt-3 border-t border-border flex justify-between font-semibold">
+          <div className="pt-3 border-t border-white/[0.06] flex justify-between font-semibold">
             <span>Total estimado</span>
-            <span className="text-primary">{quote.totalEstimate.toLocaleString()}€</span>
+            <span className="text-white">{quote.totalEstimate.toLocaleString()}€</span>
           </div>
           {quote.paidAmount > 0 && (
-            <div className="flex justify-between text-sm text-green-400">
+            <div className="flex justify-between text-sm text-white/60">
               <span>Pagado</span>
               <span>-{quote.paidAmount.toLocaleString()}€</span>
             </div>
@@ -220,7 +220,7 @@ export default function QuoteTracker({ token }: Props) {
 
       {/* Payment Actions */}
       {!isTerminal && (
-        <div className="p-8 bg-card rounded-2xl border border-border">
+        <div className="p-8 bg-[#0a0a0a] border border-white/[0.06]">
           <h2 className="text-lg font-semibold mb-4">Acciones</h2>
 
           {/* Provider selector */}
@@ -230,10 +230,10 @@ export default function QuoteTracker({ token }: Props) {
                 <button
                   key={p.name}
                   onClick={() => setSelectedProvider(p.name as 'stripe' | 'paypal')}
-                  className={`flex-1 py-3 rounded-xl border text-sm font-medium transition-all ${
+                  className={`flex-1 py-3 border text-sm font-medium transition-all ${
                     selectedProvider === p.name
-                      ? 'bg-primary/10 border-primary text-primary'
-                      : 'bg-background border-border text-muted-foreground hover:border-primary/50'
+                      ? 'bg-white/10 border-white text-white'
+                      : 'bg-background border-white/[0.06] text-white/40 hover:border-white/20'
                   }`}
                 >
                   {p.name === 'stripe' ? 'Tarjeta / Bizum' : 'PayPal'}
@@ -248,7 +248,7 @@ export default function QuoteTracker({ token }: Props) {
                 <button
                   onClick={() => handlePay('CONSULTING')}
                   disabled={paying}
-                  className="w-full py-3 bg-primary hover:bg-primary-hover disabled:opacity-50 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-white disabled:opacity-50 text-black text-sm font-medium uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-2"
                 >
                   {paying && <Loader2 className="w-4 h-4 animate-spin" />}
                   Pagar consultoría ({quote.consulting.price}€)
@@ -262,7 +262,7 @@ export default function QuoteTracker({ token }: Props) {
                   <button
                     onClick={() => handlePay('DEPOSIT')}
                     disabled={paying}
-                    className="w-full py-3 bg-primary hover:bg-primary-hover disabled:opacity-50 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 bg-white disabled:opacity-50 text-black text-sm font-medium uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-2"
                   >
                     {paying && <Loader2 className="w-4 h-4 animate-spin" />}
                     Pagar anticipo (50% = {quote.depositAmount.toLocaleString()}€)
@@ -272,7 +272,7 @@ export default function QuoteTracker({ token }: Props) {
                   <button
                     onClick={() => handlePay('FULL')}
                     disabled={paying}
-                    className="w-full py-3 bg-background border border-border hover:border-primary/50 text-foreground rounded-lg font-medium transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3 border border-white/20 text-white hover:bg-white hover:text-black font-medium transition-all flex items-center justify-center gap-2"
                   >
                     {paying && <Loader2 className="w-4 h-4 animate-spin" />}
                     Pagar completo ({quote.totalEstimate.toLocaleString()}€)

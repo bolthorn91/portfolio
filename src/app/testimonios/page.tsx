@@ -12,7 +12,7 @@ const testimonials = [
     content: "El equipo de Bolthorn Makers transformó nuestra visión en una realidad. Su experiencia en desarrollo de software y atención al detalle fue fundamental para el éxito del proyecto. Entregaron a tiempo y superaron nuestras expectativas en cada fase.",
     avatar: "MG",
     rating: 5,
-    gradient: "from-primary/20 to-secondary/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
   {
     name: "Carlos Rodríguez",
@@ -21,7 +21,7 @@ const testimonials = [
     content: "Trabajar con Bolthorn fue una experiencia excepcional. Entregaron un producto de alta calidad en tiempo récord y el soporte post-lanzamiento ha sido impecable. Su conocimiento del sector financiero marcó la diferencia.",
     avatar: "CR",
     rating: 5,
-    gradient: "from-secondary/20 to-accent/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
   {
     name: "Ana López",
@@ -30,7 +30,7 @@ const testimonials = [
     content: "Su enfoque estratégico y capacidad técnica nos ayudaron a diferenciar nuestra plataforma en el mercado. Recomiendo ampliamente su servicio para proyectos de software complejos.",
     avatar: "AL",
     rating: 5,
-    gradient: "from-accent/20 to-primary/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
   {
     name: "David Chen",
@@ -39,7 +39,7 @@ const testimonials = [
     content: "Profesionales excepcionales. Entendieron perfectamente nuestros requisitos y entregaron una solución que superó nuestras expectativas. Su metodología ágil y comunicación constante hicieron que la colaboración fuera fluida.",
     avatar: "DC",
     rating: 5,
-    gradient: "from-primary/20 to-accent/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
   {
     name: "Laura Martínez",
@@ -48,7 +48,7 @@ const testimonials = [
     content: "Bolthorn Makers demostró un profundo entendimiento de las necesidades del usuario final. La app de fidelización que desarrollaron superó todos nuestros KPIs y nuestros clientes la aman.",
     avatar: "LM",
     rating: 5,
-    gradient: "from-secondary/20 to-primary/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
   {
     name: "Javier Ruiz",
@@ -57,7 +57,7 @@ const testimonials = [
     content: "Desde la conceptualización hasta el lanzamiento, Bolthorn nos guió en cada paso. Construyeron un marketplace robusto que escaló rápidamente y nuestros usuarios están encantados.",
     avatar: "JR",
     rating: 5,
-    gradient: "from-accent/20 to-secondary/20",
+    gradient: "from-white/[0.03] to-white/[0.01]",
   },
 ];
 
@@ -74,19 +74,19 @@ export default function TestimoniosPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-white/5 blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-white/5 blur-3xl" />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="text-secondary font-semibold text-sm tracking-wider uppercase">Testimonios</span>
-          <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Testimonios</span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">
             Lo que dicen nuestros{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
+            <span className="text-white">
               clientes
             </span>
           </h1>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+          <p className="text-white/40 text-lg max-w-3xl mx-auto">
             La satisfacción de nuestros clientes es nuestro mayor reconocimiento.
             Estas son algunas de sus experiencias trabajando con nosotros.
           </p>
@@ -94,13 +94,13 @@ export default function TestimoniosPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-card">
+      <section className="py-16 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center p-6 bg-background rounded-2xl border border-border">
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+              <div key={stat.label} className="text-center p-6 bg-[#0a0a0a] border border-white/[0.06]">
+                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/40">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -114,20 +114,20 @@ export default function TestimoniosPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-12 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20 text-center max-w-4xl mx-auto relative overflow-hidden"
+            className="p-16 bg-[#0a0a0a] border border-white/[0.06] text-center max-w-4xl mx-auto relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
-            <Sparkles className="w-12 h-12 text-primary/30 mx-auto mb-6" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-3xl" />
+            <Sparkles className="w-5 h-5 text-white/40 mx-auto mb-6" />
             <blockquote className="text-2xl md:text-3xl font-semibold mb-8 leading-relaxed">
               &ldquo;Bolthorn Makers no solo construye software, construye relaciones de confianza. Entienden el negocio, proponen soluciones innovadoras y ejecutan con excelencia.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
+              <div className="w-14 h-14 bg-white/10 flex items-center justify-center text-white font-bold">
                 MG
               </div>
               <div className="text-left">
                 <div className="font-semibold">María García</div>
-                <div className="text-sm text-muted-foreground">CTO, InboxPro</div>
+                <div className="text-sm text-white/40">CTO, InboxPro</div>
               </div>
             </div>
           </motion.div>
@@ -135,7 +135,7 @@ export default function TestimoniosPage() {
       </section>
 
       {/* All Testimonials */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t, index) => (
@@ -145,22 +145,22 @@ export default function TestimoniosPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="p-8 bg-background rounded-2xl border border-border relative group hover:border-primary/50 transition-all"
+                className="p-8 bg-[#0a0a0a] border border-white/[0.06] relative group hover:border-white/20 transition-all"
               >
-                <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/10 group-hover:text-primary/20 transition-colors" />
+                <Quote className="absolute top-6 right-6 w-5 h-5 text-white/[0.06] group-hover:text-white/10 transition-colors" />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                    <Star key={i} className="w-5 h-5 text-white/40" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-6 relative z-10">&ldquo;{t.content}&rdquo;</p>
+                <p className="text-white/40 mb-6 relative z-10">&ldquo;{t.content}&rdquo;</p>
                 <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-white font-semibold`}>
+                  <div className="w-12 h-12 bg-white/10 flex items-center justify-center text-white font-semibold">
                     {t.avatar}
                   </div>
                   <div>
                     <div className="font-semibold">{t.name}</div>
-                    <div className="text-sm text-muted-foreground">{t.role} at {t.company}</div>
+                    <div className="text-sm text-white/40">{t.role} at {t.company}</div>
                   </div>
                 </div>
               </motion.div>
@@ -172,16 +172,16 @@ export default function TestimoniosPage() {
       {/* CTA */}
       <section className="py-24 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-secondary/10 to-accent/10 border border-secondary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="p-16 bg-[#0a0a0a] border border-white/[0.06]">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Únete a nuestros clientes satisfechos
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-white/40 text-lg mb-8">
               Cuéntanos tu proyecto y descubre por qué empresas líderes confían en nosotros.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black text-sm font-medium uppercase tracking-[0.15em] transition-all"
             >
               Empezar ahora
               <ArrowRight className="w-5 h-5" />

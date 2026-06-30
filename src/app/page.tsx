@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
 import Products from "@/components/sections/Products";
@@ -10,8 +8,7 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
+    <>
       <Hero />
       <Services />
       <Products />
@@ -19,7 +16,6 @@ export default function Home() {
       <Testimonials />
       <About />
       <Contact />
-      <Footer />
-    </main>
+    </>
   );
 }

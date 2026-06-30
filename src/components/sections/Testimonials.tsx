@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const testimonials = [
@@ -23,67 +23,57 @@ const testimonials = [
     name: "Ana López",
     role: "CEO",
     company: "Courthero",
-    content: "Su enfoque estratégico y capacidad técnica nos helped differentiate our platform in the market. Highly recommended for complex software projects.",
+    content: "Su enfoque estratégico y capacidad técnica nos ayudó a diferenciar nuestra plataforma en el mercado. Recomiendo ampliamente su servicio para proyectos complejos.",
     avatar: "AL",
   },
   {
     name: "David Chen",
     role: "Head of Engineering",
     company: "Vodafone",
-    content: "Profesionales excepcionales. Entendieron perfectamente nuestros requisitos y deliveraron una solución que exceeded nuestras expectativas.",
+    content: "Profesionales excepcionales. Entendieron perfectamente nuestros requisitos y entregaron una solución que superó nuestras expectativas.",
     avatar: "DC",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonios" className="py-24 bg-background">
+    <section id="testimonios" className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-primary font-medium text-sm tracking-wider uppercase">
-            Testimonios
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Lo que dicen nuestros{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-accent">
-              clientes
-            </span>
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Testimonios</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">
+            Lo que dicen nuestros <span className="text-white/60">clientes</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-white/40 text-lg max-w-2xl mx-auto">
             La satisfacción de nuestros clientes es nuestro mayor reconocimiento.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="p-8 bg-card rounded-2xl border border-border relative"
+              transition={{ delay: index * 0.05 }}
+              className="p-8 bg-[#0a0a0a] border border-white/[0.06]"
             >
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/20" />
-              
-                <p className="text-muted-foreground mb-6 relative z-10">
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-
+              <p className="text-white/60 text-sm mb-6 leading-relaxed">
+                &ldquo;{testimonial.content}&rdquo;
+              </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-semibold">
+                <div className="w-10 h-10 bg-white/10 flex items-center justify-center text-white/60 text-sm font-medium">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm font-medium">{testimonial.name}</div>
+                  <div className="text-xs text-white/40">
                     {testimonial.role} at {testimonial.company}
                   </div>
                 </div>
@@ -92,7 +82,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +90,7 @@ export default function Testimonials() {
         >
           <Link
             href="/testimonios"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white text-sm font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:bg-white hover:text-black"
           >
             Ver todos los testimonios
             <ArrowRight className="w-4 h-4" />

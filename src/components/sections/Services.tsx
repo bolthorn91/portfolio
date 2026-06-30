@@ -51,47 +51,45 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="py-24 bg-background">
+    <section id="servicios" className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-primary font-medium text-sm tracking-wider uppercase">
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em]">
             Nuestros Servicios
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Soluciones tecnológicas para <span className="text-primary">tu negocio</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">
+            Soluciones tecnológicas para <span className="text-white/60">tu negocio</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-white/40 text-lg max-w-2xl mx-auto">
             Ofrecemos servicios de desarrollo de software de alta calidad, desde aplicaciones web hasta soluciones de IA.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <Link key={service.slug} href={`/servicios/${service.slug}`}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 h-full"
+                transition={{ delay: index * 0.05 }}
+                className="group p-8 bg-[#0a0a0a] border border-white/[0.06] hover:border-white/20 transition-all duration-300 h-full"
               >
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-7 h-7 text-primary" />
+                <div className="w-12 h-12 flex items-center justify-center mb-6">
+                  <service.icon className="w-6 h-6 text-white/60 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
+                <p className="text-white/40 text-sm mb-6">{service.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full"
+                      className="px-2.5 py-1 text-xs text-white/30 border border-white/[0.06]"
                     >
                       {tag}
                     </span>
@@ -102,7 +100,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +108,7 @@ export default function Services() {
         >
           <Link
             href="/servicios"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white text-sm font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:bg-white hover:text-black"
           >
             Ver todos los servicios
             <ArrowRight className="w-4 h-4" />

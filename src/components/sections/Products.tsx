@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Home } from "lucide-react";
+import { ArrowRight, Home, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 const products = [
@@ -38,31 +38,26 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="productos" className="py-24 bg-card">
+    <section id="productos" className="py-32 bg-card">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="text-primary font-medium text-sm tracking-wider uppercase">
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em]">
             Productos
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-            Nuestras{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">
-              soluciones
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">
+            Nuestras <span className="text-white/60">soluciones</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-white/40 text-lg max-w-2xl mx-auto">
             Productos propios diseñados para resolver problemas reales con tecnología innovadora.
           </p>
         </motion.div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
@@ -70,42 +65,38 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative p-8 rounded-3xl border ${
-                product.comingSoon
-                  ? "bg-muted/30 border-border"
-                  : "bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/20"
-              }`}
+              className={`relative p-10 bg-[#0a0a0a] border ${
+                product.comingSoon ? "border-white/[0.04]" : "border-white/[0.06] hover:border-white/20"
+              } transition-all duration-300`}
             >
               {product.comingSoon && (
-                <div className="absolute top-4 right-4 px-3 py-1 bg-secondary/20 text-secondary text-sm font-medium rounded-full">
+                <div className="absolute top-4 right-4 px-3 py-1 border border-white/20 text-white/60 text-xs uppercase tracking-[0.15em]">
                   Coming Soon
                 </div>
               )}
 
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
-                product.comingSoon ? "bg-muted" : "bg-gradient-to-br from-primary to-secondary"
-              }`}>
-                <product.icon className={`w-8 h-8 ${product.comingSoon ? "text-muted-foreground" : "text-white"}`} />
+              <div className="w-12 h-12 flex items-center justify-center mb-6">
+                <product.icon className={`w-6 h-6 ${product.comingSoon ? "text-white/20" : "text-white"}`} />
               </div>
 
               <h3 className="text-2xl font-bold mb-3">{product.title}</h3>
-              <p className="text-muted-foreground mb-6">{product.description}</p>
+              <p className="text-white/40 mb-6">{product.description}</p>
 
               <ul className="space-y-3 mb-8">
                 {product.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
-                    <div className={`w-1.5 h-1.5 rounded-full ${product.comingSoon ? "bg-muted-foreground" : "bg-primary"}`} />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                    <div className="w-1 h-1 bg-white/40" />
+                    <span className="text-sm text-white/40">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <Link
                 href={product.href}
-                className={`inline-flex items-center gap-2 font-medium transition-colors ${
+                className={`inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.15em] transition-colors ${
                   product.comingSoon
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-primary hover:text-primary/80"
+                    ? "text-white/20 hover:text-white/40"
+                    : "text-white hover:text-white/60"
                 }`}
               >
                 {product.comingSoon ? "Más información" : "Acceder"}
@@ -115,19 +106,18 @@ export default function Products() {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <p className="text-muted-foreground mb-4">
+          <p className="text-white/40 mb-4 text-sm">
             ¿Tienes una idea para un producto digital?
           </p>
           <Link
             href="/productos"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-primary/25"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white text-sm font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:bg-white hover:text-black"
           >
             Ver todos los productos
             <ArrowRight className="w-4 h-4" />

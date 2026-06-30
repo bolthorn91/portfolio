@@ -16,40 +16,12 @@ const iconMap: Record<string, React.ElementType> = {
   Cloud: Cloud,
   Sparkles: Sparkles,
   GraduationCap: GraduationCap,
-  Lightbulb: Sparkles,
 }
 
-const visualThemes: Record<string, { gradient: string; pattern: string; iconBg: string }> = {
-  'web-development': {
-    gradient: 'from-blue-600/20 to-cyan-900/20',
-    pattern: 'bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px]',
-    iconBg: 'bg-blue-500/20',
-  },
-  'mobile-development': {
-    gradient: 'from-purple-600/20 to-pink-900/20',
-    pattern: 'bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:20px_20px]',
-    iconBg: 'bg-purple-500/20',
-  },
-  'artificial-intelligence': {
-    gradient: 'from-emerald-600/20 to-teal-900/20',
-    pattern: 'bg-[linear-gradient(45deg,rgba(255,255,255,0.04)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.04)_50%,rgba(255,255,255,0.04)_75%,transparent_75%)] bg-[size:20px_20px]',
-    iconBg: 'bg-emerald-500/20',
-  },
-  'cloud-devops': {
-    gradient: 'from-orange-600/20 to-amber-900/20',
-    pattern: 'bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px]',
-    iconBg: 'bg-orange-500/20',
-  },
-  'tech-consulting': {
-    gradient: 'from-red-600/20 to-rose-900/20',
-    pattern: 'bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.06)_0%,transparent_70%)] bg-[size:40px_40px]',
-    iconBg: 'bg-red-500/20',
-  },
-  'classes-mentoring': {
-    gradient: 'from-cyan-600/20 to-blue-900/20',
-    pattern: 'bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:20px_20px]',
-    iconBg: 'bg-cyan-500/20',
-  },
+const visualTheme = {
+  gradient: 'from-white/[0.03] to-transparent',
+  pattern: 'bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]',
+  iconBg: 'bg-white/10',
 }
 
 export default function ServiceDetailPage() {
@@ -87,43 +59,42 @@ export default function ServiceDetailPage() {
     )
   }
 
-  const theme = visualThemes[slug] || visualThemes['web-development']
   const Icon = iconMap[category.icon] || Code2
 
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
-      <section className={`relative pt-32 pb-24 overflow-hidden bg-gradient-to-br ${theme.gradient}`}>
-        <div className={`absolute inset-0 ${theme.pattern}`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+      <section className="relative pt-40 pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent" />
+        <div className={`absolute inset-0 ${visualTheme.pattern}`} />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <Link href="/servicios" className="inline-flex items-center gap-1 text-muted-foreground hover:text-primary mb-8 transition-colors">
+          <Link href="/servicios" className="inline-flex items-center gap-1 text-white/40 hover:text-white mb-8 transition-colors text-sm">
             <ArrowRightCircle className="w-4 h-4 rotate-180" />
             Volver a servicios
           </Link>
           <div className="max-w-4xl">
-            <div className={`w-16 h-16 rounded-2xl ${theme.iconBg} flex items-center justify-center mb-6`}>
-              <Icon className="w-8 h-8 text-white" />
+            <div className="w-14 h-14 bg-white/10 flex items-center justify-center mb-6">
+              <Icon className="w-7 h-7 text-white/60" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">{category.name}</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">{category.description}</p>
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">{category.name}</h1>
+            <p className="text-lg text-white/40 max-w-2xl">{category.description}</p>
           </div>
         </div>
       </section>
 
       {/* Subcategories */}
-      <section className="py-24 bg-card">
+      <section className="py-32 bg-card">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary font-medium text-sm tracking-wider uppercase">Planes y precios</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
+          <div className="text-center mb-20">
+            <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Planes y precios</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 tracking-tight">
               Elige el plan que mejor se adapte a ti
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/40 text-lg max-w-2xl mx-auto">
               Todos nuestros planes incluyen calidad garantizada, soporte y mejores prácticas.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {category.subcategories.map((sub) => (
               <ServicePricingCard key={sub.id} subcategory={sub} categorySlug={slug} />
             ))}
@@ -132,21 +103,19 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-background">
+      <section className="py-32 bg-background">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ¿No encuentras lo que buscas?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+          <div className="p-16 bg-[#0a0a0a] border border-white/[0.06]">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">¿No encuentras lo que buscas?</h2>
+            <p className="text-white/40 text-lg mb-8 max-w-2xl mx-auto">
               Cada proyecto es único. Hablemos y diseñamos la solución perfecta para ti.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black text-sm font-medium uppercase tracking-[0.15em] transition-all duration-300 hover:bg-white/90"
             >
               Hablemos de tu proyecto
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

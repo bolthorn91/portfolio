@@ -28,29 +28,29 @@ export default function ServicePricingCard({ subcategory, categorySlug }: Props)
   const daysLabel = formatDays(subcategory.estimatedDays)
 
   return (
-    <div className="p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/10 flex flex-col">
+    <div className="p-6 bg-[#0a0a0a] border border-white/[0.06] hover:border-white/20 transition-all flex flex-col">
       <div className="flex items-start justify-between mb-3">
         <h3 className="text-xl font-semibold">{subcategory.name}</h3>
         <div className="text-right">
-          <div className="text-2xl font-bold text-primary">{priceLabel}</div>
+          <div className="text-2xl font-bold text-white">{priceLabel}</div>
           {daysLabel && (
-            <div className="flex items-center gap-1 text-xs text-muted-foreground justify-end">
-              <Clock className="w-3 h-3" />
+            <div className="flex items-center gap-1 text-xs text-white/40 justify-end">
+              <Clock className="w-5 h-5 text-white/40" />
               {daysLabel}
             </div>
           )}
         </div>
       </div>
 
-      <p className="text-muted-foreground text-sm mb-4">{subcategory.description}</p>
+      <p className="text-white/40 text-sm mb-4">{subcategory.description}</p>
 
       {subcategory.requiresConsulting && (
-        <div className="flex items-start gap-2 px-3 py-2 bg-amber-500/10 border border-amber-500/20 rounded-lg mb-4 group relative">
-          <HelpCircle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+        <div className="flex items-start gap-2 px-3 py-2 border border-white/[0.06] mb-4 group relative">
+          <HelpCircle className="w-5 h-5 text-white/40 mt-0.5 flex-shrink-0" />
           <div>
-            <span className="text-xs font-medium text-amber-400">Requiere consultoría previa</span>
+            <span className="text-xs font-medium text-white/40">Requiere consultoría previa</span>
             {subcategory.consultingCriteria && (
-              <p className="text-xs text-muted-foreground mt-0.5">{subcategory.consultingCriteria}</p>
+              <p className="text-xs text-white/40 mt-0.5">{subcategory.consultingCriteria}</p>
             )}
           </div>
         </div>
@@ -59,22 +59,22 @@ export default function ServicePricingCard({ subcategory, categorySlug }: Props)
       <div className="space-y-2 mb-6 flex-1">
         {subcategory.features.slice(0, 6).map((feat) => (
           <div key={feat} className="flex items-start gap-2 text-sm">
-            <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-            <span className="text-muted-foreground">{feat}</span>
+            <CheckCircle className="w-5 h-5 text-white/40 mt-0.5 flex-shrink-0" />
+            <span className="text-white/40">{feat}</span>
           </div>
         ))}
         {subcategory.features.length > 6 && (
-          <p className="text-xs text-muted-foreground pl-6">+{subcategory.features.length - 6} más</p>
+          <p className="text-xs text-white/40 pl-6">+{subcategory.features.length - 6} más</p>
         )}
       </div>
 
       {subcategory.addons.length > 0 && (
-        <div className="mb-6 pt-4 border-t border-border">
+        <div className="mb-6 pt-4 border-t border-white/[0.06]">
           <p className="text-sm font-medium mb-2">Add-ons disponibles:</p>
           <div className="space-y-1.5">
             {subcategory.addons.map((addon) => (
               <div key={addon.id} className="flex justify-between text-sm">
-                <span className="text-muted-foreground">{addon.name}</span>
+                <span className="text-white/40">{addon.name}</span>
                 <span className="font-medium">
                   {addon.priceType === 'percentage' ? `${addon.price}%` : `${addon.price}€`}
                 </span>
@@ -86,7 +86,7 @@ export default function ServicePricingCard({ subcategory, categorySlug }: Props)
 
       <Link
         href={`/servicios/${categorySlug}/contratar?sub=${subcategory.slug}`}
-        className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3 bg-primary hover:bg-primary-hover text-white rounded-lg font-medium transition-all text-sm"
+        className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3 bg-white text-black text-sm font-medium uppercase tracking-[0.15em] transition-all"
       >
         Solicitar presupuesto
       </Link>

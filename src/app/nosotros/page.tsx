@@ -54,20 +54,20 @@ export default function NosotrosPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-white/5 blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-white/5 blur-3xl" />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="text-primary font-semibold text-sm tracking-wider uppercase">Nosotros</span>
-          <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">
+          <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Nosotros</span>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">
             Construimos el{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            <span className="text-white">
               futuro digital
             </span>{" "}
             juntos
           </h1>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+          <p className="text-white/40 text-lg max-w-3xl mx-auto">
             Somos un equipo apasionado por la tecnología con amplia experiencia en desarrollo de software 
             y consultoría tecnológica. Creemos en el poder de la tecnología para transformar negocios.
           </p>
@@ -75,14 +75,14 @@ export default function NosotrosPage() {
       </section>
 
       {/* About */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
                 Nuestra historia
               </h2>
-              <div className="space-y-4 text-muted-foreground text-lg">
+              <div className="space-y-4 text-white/40 text-lg">
                 <p>
                   Bolthorn Makers nace de la visión de crear productos digitales que realmente marquen la diferencia. 
                   Con más de 15 años de experiencia en el sector tecnológico, hemos tenido el privilegio de trabajar 
@@ -99,14 +99,14 @@ export default function NosotrosPage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-96 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/10 flex items-center justify-center overflow-hidden">
+            <div className="relative h-96 bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/[0.06] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px]" />
               <div className="text-center relative">
-                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4">
+                <div className="w-24 h-24 bg-white/10 flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-4xl">B</span>
                 </div>
-                <div className="text-2xl font-bold">Bolthorn<span className="text-primary">Makers</span></div>
-                <div className="text-muted-foreground">Est. 2021</div>
+                <div className="text-2xl font-bold">Bolthorn<span className="text-white">Makers</span></div>
+                <div className="text-white/40">Est. 2021</div>
               </div>
             </div>
           </div>
@@ -117,30 +117,30 @@ export default function NosotrosPage() {
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm tracking-wider uppercase">Equipo</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+            <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Equipo</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">
               Conoce a nuestro fundador
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/40 text-lg max-w-2xl mx-auto">
               Detrás de cada proyecto hay experiencia, dedicación y pasión por la tecnología.
             </p>
           </div>
           <div className="max-w-md mx-auto">
             {teamMembers.map((member) => (
-              <div key={member.name} className="text-center p-8 bg-card rounded-3xl border border-border">
-                <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center mx-auto mb-6`}>
+              <div key={member.name} className="text-center p-8 bg-[#0a0a0a] border border-white/[0.06]">
+                <div className="w-24 h-24 bg-white/10 flex items-center justify-center mx-auto mb-6">
                   <span className="text-white font-bold text-2xl">{member.initials}</span>
                 </div>
                 <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-primary font-medium">{member.role}</p>
+                <p className="text-white font-medium">{member.role}</p>
                 <div className="mt-6 flex justify-center gap-3">
                   {[
                     { icon: Code2, label: "Full-Stack" },
                     { icon: Award, label: "Tech Leadership" },
                     { icon: Users, label: "Mentoring" },
                   ].map((skill) => (
-                    <div key={skill.label} className="flex items-center gap-1.5 px-3 py-1.5 bg-muted rounded-lg text-sm text-muted-foreground">
-                      <skill.icon className="w-3.5 h-3.5" />
+                    <div key={skill.label} className="flex items-center gap-1.5 px-3 py-1.5 border border-white/[0.06] text-sm text-white/40">
+                      <skill.icon className="w-5 h-5 text-white/40" />
                       {skill.label}
                     </div>
                   ))}
@@ -152,25 +152,25 @@ export default function NosotrosPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm tracking-wider uppercase">Valores</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+            <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Valores</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">
               Lo que nos define
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-white/40 text-lg max-w-2xl mx-auto">
               Nuestros valores guían cada decisión y cada línea de código que escribimos.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value) => (
-              <div key={value.title} className="p-6 bg-background rounded-2xl border border-border hover:border-primary/50 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-primary" />
+              <div key={value.title} className="p-6 bg-[#0a0a0a] border border-white/[0.06] hover:border-white/20 transition-all">
+                <div className="w-12 h-12 border border-white/[0.06] flex items-center justify-center mb-4">
+                  <value.icon className="w-5 h-5 text-white/40" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.description}</p>
+                <p className="text-white/40 text-sm">{value.description}</p>
               </div>
             ))}
           </div>
@@ -182,9 +182,9 @@ export default function NosotrosPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center p-8 bg-card rounded-2xl border border-border">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
+              <div key={stat.label} className="text-center p-8 bg-[#0a0a0a] border border-white/[0.06]">
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-white/40">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -192,23 +192,23 @@ export default function NosotrosPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm tracking-wider uppercase">Trayectoria</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">Nuestra evolución</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Trayectoria</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">Nuestra evolución</h2>
+            <p className="text-white/40 text-lg max-w-2xl mx-auto">
               Más de 15 años de experiencia resumidos en hitos clave.
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="relative pl-8 border-l-2 border-border">
+            <div className="relative pl-8 border-l border-white/[0.06]">
               {timeline.map((item) => (
                 <div key={item.year} className="relative pb-12 last:pb-0">
-                  <div className="absolute -left-[calc(1rem+5px)] top-0 w-4 h-4 rounded-full bg-primary border-4 border-card" />
-                  <span className="text-sm text-primary font-semibold">{item.year}</span>
+                  <div className="absolute -left-[calc(1rem+5px)] top-0 w-4 h-4 bg-white/40 border-4 border-[#0a0a0a]" />
+                  <span className="text-sm text-white/40">{item.year}</span>
                   <h3 className="text-xl font-bold mt-1">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="text-white/40">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -220,15 +220,15 @@ export default function NosotrosPage() {
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-primary font-semibold text-sm tracking-wider uppercase">Clientes</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+            <span className="text-white/40 text-xs uppercase tracking-[0.2em]">Clientes</span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mt-4 mb-6">
               Empresas que confían en nosotros
             </h2>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {clientLogos.map((client) => (
-              <div key={client} className="px-6 py-3 bg-card rounded-xl border border-border">
-                <span className="font-semibold text-muted-foreground">{client}</span>
+              <div key={client} className="px-6 py-3 bg-[#0a0a0a] border border-white/[0.06]">
+                <span className="font-semibold text-white/40">{client}</span>
               </div>
             ))}
           </div>
@@ -236,18 +236,18 @@ export default function NosotrosPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-card">
+      <section className="py-24 bg-[#0a0a0a]">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-primary/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="p-16 bg-[#0a0a0a] border border-white/[0.06]">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               ¿Hablamos?
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-white/40 text-lg mb-8">
               Estamos listos para ayudarte con tu próximo proyecto.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary-hover text-white rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-primary/25"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-black text-sm font-medium uppercase tracking-[0.15em] transition-all"
             >
               Contáctanos
               <ArrowRight className="w-5 h-5" />
