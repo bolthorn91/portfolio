@@ -7,7 +7,7 @@ import type { User } from '@supabase/supabase-js'
 interface AuthContextType {
   user: User | null
   loading: boolean
-  signInWithGoogle: () => Promise<void>
+  signInWithGoogle: (returnUrl?: string) => Promise<void>
   signInWithEmail: (email: string, password: string) => Promise<{ error: string | null }>
   signUp: (email: string, password: string) => Promise<{ error: string | null }>
   signOut: () => Promise<void>
@@ -34,10 +34,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => subscription.unsubscribe()
   }, [])
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async (returnUrl?: string) => {
+    const redirectTo = returnUrl
+      ? `${window.location.origin}/auth/callback?returnUrl=${encodeURIComponent(returnUrl)}`
+      : `${window.location.origin}/auth/callback`
     await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo },
     })
   }
 

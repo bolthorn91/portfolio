@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, type ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Chrome, Loader2 } from 'lucide-react'
 import { useAuth } from '@/lib/AuthContext'
@@ -42,6 +43,7 @@ export default function AuthGate({ children, fallback }: AuthGateProps) {
 }
 
 function LoginModal({ onClose }: { onClose: () => void }) {
+  const pathname = usePathname()
   const { signInWithGoogle, signInWithEmail, signUp } = useAuth()
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [email, setEmail] = useState('')
@@ -92,7 +94,7 @@ function LoginModal({ onClose }: { onClose: () => void }) {
         </p>
 
         <button
-          onClick={signInWithGoogle}
+          onClick={() => signInWithGoogle(pathname)}
           className="w-full flex items-center justify-center gap-3 py-3 bg-background border border-white/[0.06] hover:border-white/20 transition-all mb-4"
         >
           <Chrome className="w-5 h-5" />

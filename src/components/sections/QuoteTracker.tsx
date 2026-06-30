@@ -97,15 +97,16 @@ export default function QuoteTracker({ token }: Props) {
     return () => clearInterval(interval)
   }, [fetchQuote, fetchProviders])
 
-  const handlePay = async (paymentType: 'CONSULTING' | 'DEPOSIT' | 'FULL') => {
+  const handlePay = async (payType: 'consulting' | 'deposit' | 'full') => {
     if (!quote || !user) return
     setPaying(true)
     try {
       const session = await supabase.auth.getSession()
       const token_ = session.data.session?.access_token
+      const endpoint = `/quotes/${quote.id}/pay-${payType}`
       const result = await apiPost<{ redirectUrl: string }>(
-        `/payments/create/${quote.id}/${selectedProvider}`,
-        { paymentType },
+        endpoint,
+        { provider: selectedProvider },
         token_
       )
       window.location.href = result.redirectUrl
@@ -218,6 +219,21 @@ export default function QuoteTracker({ token }: Props) {
         </div>
       </div>
 
+      {/* Project Details */}
+      {quote.fieldValues.length > 0 && (
+        <div className="p-8 bg-[#0a0a0a] border border-white/[0.06]">
+          <h2 className="text-lg font-semibold mb-4">Detalles del proyecto</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {quote.fieldValues.map((fv, i) => (
+              <div key={i}>
+                <span className="text-xs uppercase tracking-[0.1em] text-white/40">{fv.label}</span>
+                <p className="text-sm mt-0.5">{fv.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Payment Actions */}
       {!isTerminal && (
         <div className="p-8 bg-[#0a0a0a] border border-white/[0.06]">
@@ -246,7 +262,7 @@ export default function QuoteTracker({ token }: Props) {
             {quote.requiresConsulting && quote.consulting && (
               <AuthGate>
                 <button
-                  onClick={() => handlePay('CONSULTING')}
+                  onClick={() => handlePay('consulting')}
                   disabled={paying}
                   className="w-full py-3 bg-white disabled:opacity-50 text-black text-sm font-medium uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-2"
                 >
@@ -260,7 +276,7 @@ export default function QuoteTracker({ token }: Props) {
               <div className="space-y-2">
                 <AuthGate>
                   <button
-                    onClick={() => handlePay('DEPOSIT')}
+                    onClick={() => handlePay('deposit')}
                     disabled={paying}
                     className="w-full py-3 bg-white disabled:opacity-50 text-black text-sm font-medium uppercase tracking-[0.15em] transition-all flex items-center justify-center gap-2"
                   >
@@ -270,7 +286,7 @@ export default function QuoteTracker({ token }: Props) {
                 </AuthGate>
                 <AuthGate>
                   <button
-                    onClick={() => handlePay('FULL')}
+                    onClick={() => handlePay('full')}
                     disabled={paying}
                     className="w-full py-3 border border-white/20 text-white hover:bg-white hover:text-black font-medium transition-all flex items-center justify-center gap-2"
                   >

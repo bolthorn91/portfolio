@@ -5,7 +5,7 @@ import { useRouter, useSearchParams, useParams } from 'next/navigation'
 import { ArrowLeft, Loader2, Send, HelpCircle } from 'lucide-react'
 import Link from 'next/link'
 import { apiGet, apiPost } from '@/lib/api'
-import type { ServiceSubcategory, ServiceCategory, QuoteEstimate } from '@/types/api'
+import type { ServiceSubcategory, ServiceCategory, QuoteEstimate, QuoteResponse } from '@/types/api'
 
 export default function ContratarPage() {
   const router = useRouter()
@@ -89,7 +89,7 @@ export default function ContratarPage() {
     setSubmitting(true)
     setSubmitError(null)
     try {
-      const result = await apiPost<{ token: string }>('/quotes', {
+      const result = await apiPost<QuoteResponse>('/quotes', {
         subcategoryId: subcategory.id, addonIds: selectedAddons, fieldValues,
         contactName, contactEmail, contactPhone: contactPhone || undefined,
         company: company || undefined, notes: notes || undefined,

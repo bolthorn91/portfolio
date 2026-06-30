@@ -4,10 +4,11 @@ import { supabase } from '@/lib/supabase'
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const code = searchParams.get('code')
+  const returnUrl = searchParams.get('returnUrl') || '/'
 
   if (code) {
     await supabase.auth.exchangeCodeForSession(code)
   }
 
-  return NextResponse.redirect(new URL('/', request.url))
+  return NextResponse.redirect(new URL(returnUrl, request.url))
 }

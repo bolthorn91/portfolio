@@ -89,6 +89,11 @@ export interface CreateQuoteInput {
   estimatedTotal: number
 }
 
+export interface QuoteFieldValueResponse {
+  label: string
+  value: string
+}
+
 export interface QuoteResponse {
   id: string
   reference: string
@@ -116,6 +121,7 @@ export interface QuoteResponse {
     name: string
     price: number
   }[]
+  fieldValues: QuoteFieldValueResponse[]
   statusHistory: {
     status: QuoteStatus
     timestamp: string
@@ -131,4 +137,32 @@ export interface PaymentProvider {
 export interface PaymentResponse {
   redirectUrl: string
   quoteStatus: QuoteStatus
+}
+
+export interface AuthUser {
+  id: string
+  email: string
+  name: string | null
+  role: 'CLIENT' | 'ADMIN'
+}
+
+export interface QuoteListItem {
+  id: string
+  reference: string
+  status: QuoteStatus
+  contactName: string
+  contactEmail: string
+  totalEstimate: number
+  createdAt: string
+  subcategoryName: string
+}
+
+export interface PaginatedQuotes {
+  data: QuoteListItem[]
+  meta: {
+    total: number
+    page: number
+    limit: number
+    totalPages: number
+  }
 }
