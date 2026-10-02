@@ -1,0 +1,14 @@
+slug: python-fundamentals
+title: Python desde cero
+subtitle: De print() a funciones que no dan vergüenza
+description: |
+  Curso de entrada. Variables, control de flujo, funciones y pruebas.
+language: python
+difficulty: easy
+isFree: true
+estimatedHours: 12
+publish:
+  status: published
+  version: 1
+modules:
+  - 03-funciones

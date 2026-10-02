@@ -1,0 +1,28 @@
+slug: normalize-name
+title: Normalizar un nombre
+language: python
+difficulty: easy
+starterCode: |
+  def normalize_name(name: str) -> str:
+      ...
+referenceSolution: |
+  def normalize_name(name: str) -> str:
+      return " ".join(name.split()).title()
+publicTests:
+  - name: simple
+    input: ["ada lovelace"]
+    output: "Ada Lovelace"
+hiddenTests:
+  - name: extra spaces
+    input: ["  ada   lovelace "]
+    output: "Ada Lovelace"
+rubric:
+  correctnessHidden: 80
+  computationalCost: 0
+  memory: 0
+  callEconomy: 0
+  styleQuality: 20
+  robustness: 0
+generation:
+  model: grok
+  qualityGate: passed

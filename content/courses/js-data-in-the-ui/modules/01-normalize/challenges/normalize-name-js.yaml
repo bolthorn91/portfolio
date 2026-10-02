@@ -1,0 +1,22 @@
+slug: normalize-name-js
+title: Normalizar un nombre (JS)
+language: javascript
+difficulty: easy
+functionName: normalizeName
+starterCode: |
+  function normalizeName(name) {
+    // TODO
+    return name
+  }
+referenceSolution: |
+  function normalizeName(name) {
+    return name.trim().replace(/\s+/g, ' ')
+  }
+publicTests:
+  - name: simple
+    input: ["Ada Lovelace"]
+    output: "Ada Lovelace"
+hiddenTests:
+  - name: extra spaces
+    input: ["  Ada   Lovelace "]
+    output: "Ada Lovelace"

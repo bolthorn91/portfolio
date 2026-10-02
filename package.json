@@ -5,11 +5,17 @@
   "engines": {
     "node": "24.x"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:academy": "npm run test -w @bolthorn/academy-types && npm run test -w @bolthorn/academy-content && npm run test -w @bolthorn/judge && npm run test -w @bolthorn/academy",
+    "test:site": "vitest run --config vitest.site.config.ts"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -30,6 +36,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   }
 }

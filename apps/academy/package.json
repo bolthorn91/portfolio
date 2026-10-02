@@ -1,0 +1,39 @@
+{
+  "name": "@bolthorn/academy",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "content:sync": "tsx src/scripts/content-sync.ts",
+    "content:validate": "tsx ../../packages/academy-content/src/validateCli.ts"
+  },
+  "dependencies": {
+    "@bolthorn/academy-content": "0.0.1",
+    "@bolthorn/academy-types": "0.0.1",
+    "@monaco-editor/react": "^4.7.0",
+    "@trpc/server": "^11.6.0",
+    "monaco-editor": "^0.52.2",
+    "drizzle-orm": "^0.44.5",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "server-only": "^0.0.1",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.6",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}

@@ -191,19 +191,30 @@ function UserProfile({ user }) {
 - Use semantic colors: `bg-primary`, `text-primary`
 - Responsive: `md:`, `lg:` prefixes
 
+## Goal loop
+
+Phased implementation uses `/goal` (user-level Grok skill). Per-repo seam:
+
+- Profile: `agent-docs/goal-profile.md`
+- Canonical docs: `docs/product/NN-*.md`
+- Run state (gitignored): `.grok/goal-runs/`
+- Kit source of truth: `Documents/webprojects/goal-loop-kit`
+
+Do not vendor `SKILL.md` into this repo. Do not treat `internaldocs/` as spec once a product doc exists.
+
 ## Project Structure
 
 ```
-project/
-├── src/
-│   ├── app/           # Next.js App Router
-│   ├── components/    # Reusable components
-│   │   ├── sections/  # Page sections
-│   │   └── ui/        # UI components
-│   ├── lib/           # Utilities
-│   └── styles/        # Global styles
-├── public/            # Static assets
-└── package.json
+bolthornmakers/
+├── src/                         # Consultancy Next.js (Vercel root)
+├── apps/academy/                # LMS Next.js
+├── apps/judge/                  # Execution + rubric + queues
+├── packages/academy-types/      # Shared domain contracts
+├── packages/academy-content/    # YAML/MDX loaders
+├── content/courses/             # Canonical course source
+├── agent-docs/                  # Goal profile + templates
+├── docs/product/                # Canonical goal documents
+└── package.json                 # npm workspaces root + site
 ```
 
 ## Error Handling

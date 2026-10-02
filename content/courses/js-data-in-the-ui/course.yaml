@@ -1,0 +1,9 @@
+slug: js-data-in-the-ui
+title: Datos en la UI
+language: javascript
+difficulty: easy
+publish:
+  status: published
+  version: 1
+modules:
+  - 01-normalize

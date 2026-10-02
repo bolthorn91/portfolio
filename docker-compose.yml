@@ -1,0 +1,18 @@
+# Local Redis + Judge0 for academy. Not started by Goal 00 tests or CI.
+# Usage (Goal 02+): docker compose up -d
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  judge0:
+    image: judge0/judge0:1.13.1
+    privileged: true
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - "2358:2358"
+    depends_on:
+      - redis

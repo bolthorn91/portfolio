@@ -5,9 +5,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const academyUrl = process.env.NEXT_PUBLIC_ACADEMY_URL ?? "http://localhost:3001";
+
 const navLinks = [
   { href: "/servicios", label: "Servicios" },
   { href: "/productos", label: "Productos" },
+  { href: academyUrl, label: "Academia" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/testimonios", label: "Testimonios" },
   { href: "/nosotros", label: "Nosotros" },

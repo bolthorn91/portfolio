@@ -1,0 +1,11 @@
+slug: bad-rubric
+title: Bad rubric
+language: python
+difficulty: easy
+rubric:
+  correctnessHidden: 50
+  computationalCost: 10
+  memory: 0
+  callEconomy: 0
+  styleQuality: 0
+  robustness: 0

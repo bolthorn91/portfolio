@@ -1,0 +1,9 @@
+slug: 03-funciones
+title: Funciones que se pueden leer
+order: 3
+summary: Parámetros, retorno, scope y por qué no todo es un script lineal.
+lessons:
+  - 01-que-es-una-funcion
+  - 02-playground-promedio
+unlock:
+  requirePrevious: true

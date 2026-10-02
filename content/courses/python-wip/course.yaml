@@ -1,0 +1,8 @@
+slug: python-wip
+title: Borrador WIP que no debe listarse
+language: python
+difficulty: easy
+publish:
+  status: draft
+  version: 1
+modules: []
